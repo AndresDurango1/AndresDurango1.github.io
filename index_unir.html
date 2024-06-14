@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/estilos_unir.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <title>Juego de Emparejamiento</title>
+</head>
+<body>
+  <div class="container">
+    <div class="sub-container">
+      <div class="side" id="sideA">
+        <div class="item" draggable="true" data-match="oferta">
+          <img class="imgOferta" src="./recursos/img/oferta-copia.png" alt="oferta" class="tama_ig">
+        </div>
+        <div class="item" draggable="true" data-match="vendedor">
+          <img class="imgVendedor" src="./recursos/img/vendedor-copia.png" alt="vendedor">
+        </div>
+        <div class="item" draggable="true" data-match="plan">
+          <img class="imgPlan" src="./recursos/img/plan-copia.png" alt="plan">
+        </div>
+        <div class="item" draggable="true" data-match="formato5151">
+          <img class="imgFormato5151" src="./recursos/img/contrato_hogares.png" alt="formato5151">
+        </div>
+        <div class="item" draggable="true" data-match="trataauto">
+          <img class="imgTrataAuto" src="./recursos/img/autorizaciones.png" alt="trataauto">
+        </div>
+      </div>
+      <div class="side" id="sideB">
+        <div class="item" data-match="vendedor">
+          <p>Persona que da a conocer y hace el proceso de los diferentes formatos (Tratamiento y Autorizaciones, 5151 Hogares).</p>
+        </div>
+        <div class="item" data-match="formato5151">
+          <p>Contrato que se debe diligenciar para hacer un proceso en los hogares.</p>
+        </div>
+        <div class="item" data-match="plan">
+          <p>Lo que se le vende al cliente para que adquiera nuestro servicio.</p>
+        </div>
+        <div class="item" data-match="trataauto">
+          <p>Formato que se debe diligenciar antes del formulario 5151 Hogares.</p>
+        </div>
+        <div class="item" data-match="oferta">
+          <p>Lo que incluye los productos que van a ser vendidos al cliente.</p>
+        </div>
+      </div>
+    </div>
+    <a type="button" href="./menu_juego.html" class="boton-regresar">Regresar</a>
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p id="modalText">Felicidades Guerrero, has completado con éxito el juego de emparejamiento.</p>
+        <button class="close">Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <script src="./JS/script_unir.js"></script>
+</body>
+</html>

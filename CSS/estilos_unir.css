@@ -1,0 +1,487 @@
+@font-face {
+  font-family: 'tigo';
+  src: url('../recursos/LetraTigo/tigo.ttf');
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  background-color: #f0f0f0;
+  background-image: url(../recursos/img/FONDO.png);
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .sub-container {
+  width: 60%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .sub-container .side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .sub-container #sideA .item{
+  width: 60%;
+  height: 19%;
+  background-color: white;
+  border: 1px solid gray;
+  cursor: pointer;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px;
+}
+.container .sub-container #sideA .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.container .sub-container #sideB .item{
+  width: 95%;
+  height: 19%;
+  background-color: white;
+  border: 1px solid gray;
+  cursor: pointer;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: justify; 
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px;
+}
+.container .sub-container #sideB .item p{
+  font-size: 18px;
+}
+.container .sub-container #sideB .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.container .boton-regresar {
+  width: 10%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none; 
+  color: white;
+  background-color: #007bff; 
+  border-radius: 10px; 
+  border: solid 1px #0056b3;
+  transition: background-color 0.3s ease; 
+}
+.container .boton-regresar:hover {
+    background-color: #0056b3;
+}
+.matched {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #00eff7a1 !important;
+  pointer-events: none;
+}
+.container .modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+}
+.container .modal .modal-content {
+  width: 50%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.container .modal .modal-content #modalText {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+.container .modal .modal-content .close {
+  width: 15%;
+  height: 10%;
+  background-color: #007bff;
+  border: solid 1px#0056b3;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; 
+}
+.container .modal .modal-content .close:hover,
+.container .modal .modal-content.close:focus {
+  background-color: #0056b3;
+  border: solid 1px#007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++vertical++++++++++++++++++++++++++++++++++*/
+@media (min-width: 320px) and (max-width: 544px) {
+  .container .sub-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 90%;
+  }
+  .container .sub-container #sideB .item p{
+    font-size: 12px;
+  }
+  .container .boton-regresar {
+    width: 20%;
+    font-size: 18px;
+  }
+  .container .modal .modal-content {
+    width: 70%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 20px;
+  }
+  .container .modal .modal-content .close {
+    width: 30%;
+    height: 12%;
+    font-size: 18px;
+  }
+}
+@media (min-width: 545px) and (max-width: 640px) {
+  .container .sub-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 90%;
+  }
+  .container .sub-container #sideB .item p{
+    font-size: 18px;
+  }
+  .container .boton-regresar {
+    width: 20%;
+    font-size: 25px;
+  }
+  .container .modal .modal-content {
+    width: 70%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 30px;
+  }
+  .container .modal .modal-content .close {
+    width: 30%;
+    height: 12%;
+    font-size: 25px;
+  }
+}
+@media (min-width: 641px) and (max-width: 780px) {
+  .container .sub-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 90%;
+  }
+  .container .sub-container #sideB .item p{
+    font-size: 20px;
+  }
+  .container .boton-regresar {
+    width: 30%;
+    font-size: 25px;
+  }
+  .container .modal .modal-content {
+    width: 70%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 40px;
+  }
+  .container .modal .modal-content .close {
+    width: 30%;
+    height: 12%;
+    font-size: 25px;
+  }
+}
+@media (min-width: 781px) and (max-width: 1023px) {
+  .container .sub-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 90%;
+  }
+  .container .sub-container #sideB .item p{
+    font-size: 20px;
+  }
+  .container .boton-regresar {
+    width: 30%;
+    font-size: 30px;
+  }
+  .container .modal .modal-content {
+    width: 70%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 40px;
+  }
+  .container .modal .modal-content .close {
+    width: 30%;
+    height: 12%;
+    font-size: 30px;
+  } 
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .container .sub-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 60%;
+  }
+  .container .sub-container #sideB .item p{
+    font-size: 23px;
+  }
+  .container .boton-regresar {
+    width: 25%;
+    font-size: 20px;
+  }
+  .container .modal .modal-content {
+    width: 50%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 30px;
+  }
+  .container .modal .modal-content .close {
+    width: 25%;
+    height: 12%;
+    font-size: 20px;
+  } 
+}
+/*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
+@media (orientation: landscape) and (max-height:385px) {  
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }   
+  .container .sub-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 60%;
+  }
+  .container .sub-container #sideA .item .imgOferta {
+    content: url(../recursos/img/oferta-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgVendedor {
+    content: url(../recursos/img/vendedor-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgPlan {
+    content: url(../recursos/img/plan-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgFormato5151 {
+    content: url(../recursos/img/contrato_hogares-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgTrataAuto  {
+    content: url(../recursos/img/autorizaciones-copia-MQ.png);
+  }  
+  .container .sub-container #sideB .item p{
+    font-size: 15px;
+  }
+  .container .boton-regresar {
+    width: 10%;
+    height: 10%;
+    font-size: 15px;
+  }
+  .container .modal .modal-content {
+    width: 70%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 15px;
+  }
+  .container .modal .modal-content .close {
+    width: 15%;
+    height: 20%;
+    font-size: 15px;
+  } 
+}
+@media (orientation: landscape) and (min-height:410px) and (max-height: 550px){
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }   
+  .container .sub-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container .side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container .sub-container #sideA .item{
+    width: 60%;
+  }
+  .container .sub-container #sideA .item .imgOferta {
+    content: url(../recursos/img/oferta-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgVendedor {
+    content: url(../recursos/img/vendedor-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgPlan {
+    content: url(../recursos/img/plan-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgFormato5151 {
+    content: url(../recursos/img/contrato_hogares-copia-MQ.png);
+  }
+  .container .sub-container #sideA .item .imgTrataAuto  {
+    content: url(../recursos/img/autorizaciones-copia-MQ.png);
+  }  
+  .container .sub-container #sideB .item p{
+    font-size: 13px;
+  }
+  .container .boton-regresar {
+    width: 10%;
+    height: 10%;
+    font-size: 15px;
+  }
+  .container .modal .modal-content {
+    width: 70%;
+    height: 35%;
+    padding: 5px;
+  }
+  .container .modal .modal-content #modalText {
+    font-size: 15px;
+  }
+  .container .modal .modal-content .close {
+    width: 15%;
+    height: 20%;
+    font-size: 15px;
+  } 
+}

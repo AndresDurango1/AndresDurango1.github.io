@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tratamiento y Autorización</title>
+  <link rel="stylesheet" href="./CSS/estilo_index_vid3.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+  <div class="containerPrincipal">
+    <div class="modal_ini" id="infoModal1">
+      <div class="modal_ini-content">
+          <h1 class="titulo_intro">Nivel 3</h1>
+          <video id="videointro" src="./recursos/videos/casco.mp4" type="video/mp4" autoplay muted width="500" height="500">
+            Tu navegador no admite el elemento de video.
+          </video>
+          <button class="closeModal1">Cerrar</button>
+      </div>
+    </div>
+    <div id="video-container">
+      <video id="video" src="./recursos/videos/contrato5151.mp4" type="video/mp4" controls  width="1000" height="1000">
+        Tu navegador no admite el elemento de video.
+      </video>
+    </div>
+    <div id="decision-container">
+      <button class="decision-button" onclick="makeDecision(1)">Prueba lo que acabas de ver...!</button>
+    </div>
+  </div>
+<script src="./JS/script_video3.js"></script>
+</body>
+</html>

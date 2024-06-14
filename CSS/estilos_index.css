@@ -1,0 +1,537 @@
+@font-face {
+  font-family: 'tigo';
+  src: url('../recursos/LetraTigo/tigo.ttf');
+}
+@import url(https://db.onlinewebfonts.com/c/ab89afb3d4431982e93f981d37ad50d0?family=tigonPro-Regular+Regular);
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  background-image: url(../recursos/img/FONDO.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.containerPrincipal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.containerPrincipal .modal_ini {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.containerPrincipal .modal_ini .modal_ini-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-size: 50px; 
+  color: white;
+  margin: 0%;
+}
+.containerPrincipal .modal_ini .modal_ini-content #videointro {
+  width: 40%;
+  height: 80%;
+  /* border: 5px solid #003cff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); */
+  object-fit: contain;
+  margin: 0%;
+}
+.containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+  width: 10%;
+  height: 5%;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #003cff;
+  transition: background-color 0.3s ease;
+}
+.containerPrincipal .modal_ini .modal_ini-content .closeModal1:hover,
+.containerPrincipal .modal_ini .modal_ini-content .closeModal1:active {
+  background-color: hwb(214 0% 0%);
+  color: #fff;
+}
+/*ESTILOS SWEET ALERT VALIDACION DISPOSICIÓN DISPOSITIVO MÓLVIL*/
+.swal2-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*ESTILOS VIDEO*/
+.containerPrincipal #video-container {
+  width: 100%;
+  height: 100%;
+  display: none;/*Inicialmente se oculta el contenedor del video para que se visualice bien el modal. con JS se maneja el evento para que cuando se cierre el modal aparezca el contenedor*/
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-bottom: 0%;
+}
+.containerPrincipal #video-container #video {
+  width: 80%;
+  height: 80%;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+/*ESTILOS VENTANA MODAL QUIZ*/
+.containerPrincipal #quiz-modal {
+  width: 95%;
+  height: 95%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+.containerPrincipal #quiz-modal #quiz-box {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #01224e;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+.containerPrincipal #quiz-modal #quiz-box #question {
+  width: 100%;
+  height: 15%;
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+}
+.containerPrincipal #quiz-modal #quiz-box .answer-button {
+  width: 80%;
+  height: 15%;
+  color: white;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #1f3b90;
+  transition: background-color 0.3s ease-in-out;
+}
+.containerPrincipal #quiz-modal #quiz-box .answer-button:hover {
+  background-color: #01224e;
+}
+/* Estilos para la ventana emergente personalizada */
+.containerPrincipal .custom-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+.containerPrincipal .custom-popup .popup-content {
+  width: 50%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3235ff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.containerPrincipal .custom-popup .popup-content p {
+  width: 100%;
+  height: 50%;
+  margin: 0%;
+  color: #fff;
+  text-align: center;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-size: 35px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++vertical++++++++++++++++++++++++++++++++++*/
+@media (min-width: 320px) and (max-width: 544px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 8%;
+    font-size: 28px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 85%;
+    height: 85%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 8%;
+    font-size: 28px;
+  }
+  .swal2-container .swal2-popup {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 10px; 
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 95%;
+    height: 95%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 20px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 15px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 20%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 20px;
+  }
+}
+@media (min-width: 545px) and (max-width: 640px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 8%;
+    font-size: 50px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 85%;
+    height: 85%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 8%;
+    font-size: 35px;
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 95%;
+    height: 95%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 30px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 25px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 20%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 25px;
+  }
+}
+@media (min-width: 641px) and (max-width: 780px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 8%;
+    font-size: 50px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 85%;
+    height: 85%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 8%;
+    font-size: 35px;
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 95%;
+    height: 95%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 30px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 25px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 20%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 45px;
+  }
+}
+@media (min-width: 781px) and (max-width: 1023px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 8%;
+    font-size: 60px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 85%;
+    height: 85%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 8%;
+    font-size: 45px;
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 95%;
+    height: 95%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 30px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 23px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 35%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 35px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 8%;
+    font-size: 45px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 80%;
+    height: 80%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 8%;
+    font-size: 35px;
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 95%;
+    height: 95%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 30px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 23px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 35%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 35px;
+  }
+}
+/*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
+@media (orientation: landscape) and (max-height: 385px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 10%;
+    font-size: 28px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 80%;
+    height: 80%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 6%;
+    font-size: 25px;
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 90%;
+    height: 90%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 20px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 18px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 30%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 25px;
+  }
+}
+@media (orientation: landscape) and (min-height:410px) and (max-height: 550px) {
+  .containerPrincipal .modal_ini .modal_ini-content .titulo_intro {
+    width: 100%;
+    height: 10%;
+    font-size: 28px;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content #videointro {
+    width: 80%;
+    height: 80%;
+  }
+  .containerPrincipal .modal_ini .modal_ini-content .closeModal1 {
+    width: 25%;
+    height: 6%;
+    font-size: 25px;
+  }
+  /*ESTILOS VIDEO*/
+  .containerPrincipal #video-container #video {
+    width: 90%;
+    height: 90%;
+  }
+  /*ESTILOS VENTANA MODAL QUIZ*/
+  .containerPrincipal #quiz-modal {
+    width: 95%;
+    height: 95%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box {
+    width: 90%;
+    height: 60%;
+  }
+  .containerPrincipal #quiz-modal #quiz-box #question {
+    font-size: 20px;
+  }
+  .containerPrincipal #quiz-modal #quiz-box .answer-button {
+    width: 90%;
+    height: 15%;
+    font-size: 18px;
+  }
+  /* Estilos para la ventana emergente personalizada */
+  .containerPrincipal .custom-popup .popup-content {
+    width: 95%;
+    height: 30%;
+  }
+  .containerPrincipal .custom-popup .popup-content p {
+    font-size: 30px;
+  }
+}

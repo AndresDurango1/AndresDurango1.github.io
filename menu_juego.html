@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUEGOS DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="./CSS/estilos_menu_juego.css">
+</head>
+<body>
+    <div class="modal_ini" id="infoModal1">
+        <div class="modal_ini-content">
+            <h2 class="modal_title">¡Atención Guerrero!</h2>
+            <p class="mensaje_modal"> A continuación ingresarás a los juegos de aprendizaje, espero que hayas puesto atención. No te olvides que puedes regresar a los videos si tienes duda de tus conocimientos.</p>
+            <a type="button" class="btnVolver" href="./index_video3.html">Volver a los videos</a>
+            <button class="closeModal1">Cerrar</button>
+        </div>
+    </div>
+    <!-- Alerta -->
+    <div class="alerta" id="alerta">
+        <h2 class="alert_title">Bienvenido Guerrero a los Juegos de Aprendizaje</h2>
+        <h2 class="mensaje_alerta1">Estos son los Juegos de Aprendizaje donde podrás poner a prueba todo el conocimiento adquirido durante este proceso, prepara escudo y espada.</h2>
+        <p class="mensaje_alerta2">¡Guerrero, que todos tus esfuerzos sean recompensados con éxito.!</p>
+        <button class="close-alerta" id="closeAlerta">CERRAR</button>
+    </div>
+    <!-- Cubo de Juegos -->
+    <div class="cuboJuegos" id="cuboJuegos">
+        <div class="face container">
+            <div class="cara superior">
+                <img src="./recursos/img/tapa.jpg" alt="cara superior">
+            </div>
+            <div class = "cara izquierda">
+                <a href="./index_unir.html">
+                    <img src="./recursos/img/conecta.jpg" alt="cara izquierda">
+                </a>
+            </div>
+            <div class = "cara derecha">
+                <a href="./index_memoria.html">
+                    <img src="./recursos/img/memoria.png" alt="cara derecha">
+                </a>
+            </div>
+            <div class = "cara trasera">
+                <a href="./index_ahorcado.html">
+                    <img src="./recursos/img/ahorcado.png" alt="cara trasera">
+                </a>
+            </div>
+            <div class = "cara frontal">
+                <a href="./index_palabras.html">
+                    <img src="./recursos/img/ordena.jpg" alt="cara frontal">
+                </a>
+            </div>    
+        </div>
+    </div>
+    <!-- Botón Finalizar -->
+    <button class ="btn_finalizar" id="btnFinalizar">Si ya pasaste todos los juegos da clic aquí</button>
+    <!-- Modal para el video felicitaciones -->
+    <div class="modal" id="videoModal" >
+        <div class="modal-content" id="modal-content">
+            <video class="videofin" src="./recursos/videos/felicidades.mp4" controls >
+                Tu navegador no admite la reproducción de video.
+            </video>
+            <button class="close" id="closeModal" >CERRAR</button>
+        </div>
+    </div>
+    <script src="./JS/script_menu.js"></script>
+</body>
+</html>

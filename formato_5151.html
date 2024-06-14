@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="./CSS/estilos_formato5151.css">
+    <link rel="icon" href="./recursos/img/encabezado.png">
+    <title>FORMATO 5151</title>
+</head>
+<body>
+    <div class="formulario">
+        <!--VENTANA MODAL INICIAL AUTOMÁTICA-->
+        <div class="modal_ini" id="infoModal1">
+            <div class="modal_ini-content">
+                <h2>¡Importante!</h2>
+                <b>Cada vez que veas este ícono:</b>
+                <img src="./recursos/img/info.png" alt="Info" width="20" height="15">
+                <b>Es una ayuda para ti.😊</b>
+                <button class="closeModal1">Cerrar</button>
+                <button id="miBoton" class="boton_regre"><a href="./index_video3.html">Regresar al video</a></button>
+            </div>
+        </div>
+        <!--CONTENIDO PRINCIPAL-->
+        <div class="container">
+            <!-- ******************************************************ENCABEZADO******************************************** -->
+            <div class="arriba" id="arriba">
+                <div class="titulo">FORMATO 5151 HOGARES</div>
+                <img id="info"  src="./recursos/img/blanco info.png" alt="Info" class="infoImage" data-modal-index="0">
+            </div>
+            <div class="sub-container">
+                <button class="boton-enviar" type="submit" id="submitBtn">Enviar</button>
+                <button class="boton_regre"><a href="./index_video3.html">Regresar al video</a></button>
+            </div>
+            <!-- ****************************************************FORMULARIO************************************************* -->
+            <form action="" method="POST" id="miFormulario">
+                <p class="f_titulo">REGISTRO DE DATOS</p>
+                <div class="foncon">
+                    <div class="contenedorFecha">
+                        <div class="fechaActual">FECHA: </div>
+                        <div id="fecha"></div> <!-- FECHA DE HOY AUTOMATICA -->    
+                    </div>
+                    <!-- VENTANA MODAL VIDEOS DE AYUDA DILIGENCIAMIENTO FORMULARIO -->
+                    <div class="modal_info" id="infoModal">
+                        <div class="modal_info-content">
+                            <h2 id="modalTitle">Información Adicional</h2>
+                            <button class="closeModal">Cerrar</button>
+                            <p id="modalContent">Aquí puedes poner la información que deseas mostrar.</p>
+                        </div>
+                    </div>
+                    <h5 class="reque">CÓDIGO POS TIENDA<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="codpos" name="codpos" maxlength="7">
+                    </div>
+                    <h5 class="reque">NOMBRE VENDEDOR<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="name" name="name" maxlength="40">
+                    </div>
+                    <h5 class="reque">DOCUMENTO VENDEDOR<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="docven" name="docven" maxlength="12">
+                    </div>
+                    <h5 class="reque">CÓDIGO VENDEDOR<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="codven" name="codven" maxlength="25">
+                        <img src="./recursos/img/info.png" alt="Info" width="14" height="12" id="poseinfo1" class="infoImage" data-modal-index="1">
+                    </div>
+                    <h5 class="reque">NÚMERO DE CONTRATO<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="numcon" name="numcon">
+                        <img src="./recursos/img/info.png" alt="Info" width="14" height="12" id="poseinfo1" class="infoImage" data-modal-index="2">
+                    </div>
+                    <h5 class="reque">TIPO DE CONTRATO<span style="color: red;">(*)</span></h5>
+                    <select disabled>
+                        <option value="">COMPLETO</option>
+                    </select>
+                    <h5 class="reque">FORMATO ELABORADO POR CONTINGENCIA<span style="color: red;">(*)</span>
+                        <img src="./recursos/img/info.png" alt="Info" width="14" height="12" id="poseinfo2" class="infoImage" data-modal-index="3">
+                    </h5>
+                    <select id="opciones" name="opciones">
+                        <option value="SI">SI</option>
+                        <option value="NO">NO</option>
+                    </select>
+                </div>
+                <p class="f_titulo">SUSCRIPTOR (PERSONA NATURAL O JURÍDICA)</p>
+                <div class="foncon">
+                    <h5 class="reque">NOMBRES Y APELLIDOS Y/O RAZÓN SOCIAL<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="nomraz" name="nomraz" maxlength="40">
+                    </div>
+                    <h5 class="reque">TIPO DE DOCUMENTO<span style="color: red;">(*)</span></h5>
+                    <select id="opciones" name="opciones">
+                        <option value="CC">CC</option>
+                        <option value="CE">CE</option>
+                    </select>
+                    <h5 class="reque">NÚMERO DE DOCUMENTO<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="numdoc" name="numdoc" maxlength="12">
+                    </div>
+                    <h5 class="reque">DIRECCIÓN DE SERVICIO<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="dicser" name="dicser" maxlength="100">
+                    </div>
+                    <h5 class="reque">CÓDIGO POSTAL</h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="vacio" disabled>
+                    </div>
+                    <h5 class="reque">TELÉFONO FIJO/MÓVIL<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="telmo" name="telmo" maxlength="12">
+                    </div>
+                    <h5 class="reque">ESTRATO<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="est" name="est" maxlength="1">
+                    </div>
+                    <h5 class="reque">CORREO ELECTRÓNICO<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="corre1" name="corre1" maxlength="100">
+                    </div>
+                    <h5 class="reque">REPETIR CORREO ELECTRÓNICO<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="corre2" name="corre2" maxlength="100">
+                    </div>
+                    <h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
+                    <select id="departamento" onchange="cargarMunicipios()" id="campo5">
+                        <option value=""></option>
+                        <option value="antioquia">Antioquia</option>
+                        <option value="atlantico">Atlántico</option>
+                        <option value="bogota">Bogotá D.C.</option>
+                        <option value="valle">Valle del Cauca</option>
+                        <option value="santander">Santander</option>
+                        <option value="caldas">Caldas</option>
+                        <option value="risaralda">Risaralda</option>
+                        <option value="quindio">Quindío</option>
+                        <option value="bolivar">Bolívar</option>
+                        <option value="magdalena">Magdalena</option>
+                        <option value="tolima">Tolima</option>
+                        <option value="norteSantander">Norte de Santander</option>
+                    </select>
+                    <h5>CIUDAD<span style="color: red;">(*)</span></h5>
+                    <select id="municipio" required>
+                        <!-- Las opciones de municipios se cargarán dinámicamente -->
+                    </select>
+                    <h5 class="reque">DIRECCIÓN SUSCRIPTOR<span style="color: red;">(*)</span></h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="dicsus" name="dicsus" maxlength="100">
+                    </div>
+                    <h5>
+                        <br>
+                    </h5>
+                </div>
+            </form>    
+            <!-- Modal de errores -->
+            <div id="errorModal" class="modal">
+                <div class="modal-content">
+                    <h2 class="erroformu">ERRORES EN EL FORMULARIO:</h2>
+                    <ol id="errorMessages"></ol>
+                    <button id="closeModalBtn">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./JS/script_formato5151.js"></script>
+</body>
+</html>

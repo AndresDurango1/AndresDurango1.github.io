@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/estilos_index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+  <title>INTRODUCCION</title>
+</head>
+<body>
+  <div class="containerPrincipal">
+    <div class="modal_ini" id="infoModal1">
+      <div class="modal_ini-content">
+        <h1 class="titulo_intro">Nivel 1</h1>
+        <video id="videointro" src="./recursos/videos/espada.mp4" autoplay muted>
+          Tu navegador no admite el elemento de video.
+        </video>
+        <button class="closeModal1">Cerrar</button>
+      </div>
+    </div>
+    <div id="video-container">
+      <video id="video" src="./recursos/videos/introduccion_tigo.mp4" type="video/mp4" controls>
+        Tu navegador no admite el elemento de video.
+      </video>
+    </div>
+    <div id="quiz-modal">
+      <div id="quiz-box">
+        <p id="question">¿Cúal de estas opciones NO estaba en ruta de aprendizaje?</p>
+        <button class="answer-button" onclick="checkAnswer(false)">Diligenciar los datos del cliente</button>
+        <button class="answer-button" onclick="checkAnswer(true)">Cómo ingresar la venta en el sistema</button>
+        <button class="answer-button" onclick="checkAnswer(false)">Gestionar el formulario 5151 hogares</button>
+        <button class="answer-button" onclick="checkAnswer(false)">Diligenciar el formato de consulta y tratamiento de datos</button>
+      </div>
+    </div>
+    <div class="custom-popup" id="custom-popup">
+      <div class="popup-content">
+        <p>¡¡¡Correcto!!!</p>
+        <p>Felicidades Guerrero, pasas al siguiente Nivel</p>
+      </div>
+    </div>
+  </div>
+  <script src="./JS/script_index.js"></script>
+</body>
+</html>

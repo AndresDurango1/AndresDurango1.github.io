@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/estilo_index_vid2.css">
+  <link rel="icon" href="./recursos/img/encabezado.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+  <title>TRATAMIENTO Y AUTORIZACION</title>
+</head>
+<body>
+  <div class="containerPrincipal">
+    <div class="modal_ini" id="infoModal1">
+      <div class="modal_ini-content">
+        <h1 class="titulo_intro">Nivel 2</h1>
+        <video id="videointro" src="./recursos/videos/escudo.mp4" type="video/mp4" autoplay muted>
+          Tu navegador no admite el elemento de video.
+        </video>
+        <button class="closeModal1">Cerrar</button>
+      </div>
+    </div>
+    <div id="video-container">
+      <video id="video" src="./recursos/videos/tratamiento.mp4" type="video/mp4" controls>
+        Tu navegador no admite el elemento de video.
+      </video>
+    </div>
+    <div id="decision-container">
+      <button class="decision-button" onclick="makeDecision(1)">Prueba lo que acabas de ver...!</button>
+    </div>
+  </div>
+<script src="./JS/script_video2.js"></script>
+</body>
+
+</html>

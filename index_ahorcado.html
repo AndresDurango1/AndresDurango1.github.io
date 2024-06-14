@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Ahorcado</title>
+    <link rel="stylesheet" href="./CSS/estilos_ahorcado.css">
+</head>
+<body>
+    <div class="contenedorPrincipal" id="contenedorPrincipal">
+        <h1 class="titulo">Juego de Ahorcado</h1>
+        <h4 class="subtitulo"></h4>
+        <h5 class="recomendacion">Recuerda, no te puedes equivocar mas de 6 veces</h5>
+        <div class="contenedorHangman">
+            <svg class="hangman" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+                <!-- Soporte -->
+                <line x1="20" y1="180" x2="180" y2="180" stroke="white" stroke-width="5"/>
+                <line x1="70" y1="180" x2="70" y2="20" stroke="white" stroke-width="5" />
+                <line x1="70" y1="20" x2="120" y2="20" stroke="white" stroke-width="5" />
+                <line x1="120" y1="20" x2="120" y2="50" stroke="white" stroke-width="5" />
+                <!-- Cabeza -->
+                <circle cx="120" cy="70" r="20" id="head"></circle>
+                <!-- Cuerpo -->
+                <line x1="120" y1="90" x2="120" y2="130" id="body"></line>
+                <!-- Brazos -->
+                <line x1="120" y1="100" x2="140" y2="90" id="left-arm"></line>
+                <line x1="120" y1="100" x2="100" y2="90" id="right-arm"></line>
+                <!-- Piernas -->
+                <line x1="120" y1="130" x2="140" y2="150" id="left-leg"></line>
+                <line x1="120" y1="130" x2="100" y2="150" id="right-leg"></line>
+            </svg>
+                    </div>
+        <div class="sub-container" id="sub-container">
+            <div class="word" id="word"></div>
+            <div class="letters" id="letters"></div>
+            <div class="cajon" id="cajon">
+                <div class="message" id="message"></div>
+            </div>
+        </div>
+        <div id="contenedorTeclado">
+            <label for="letra">Selecciona una letra</label>
+            <div class="letter-buttons">
+                <button class="letter-button" data-letter="a">A</button>
+                <button class="letter-button" data-letter="b">B</button>
+                <button class="letter-button" data-letter="c">C</button>
+                <button class="letter-button" data-letter="d">D</button>
+                <button class="letter-button" data-letter="e">E</button>
+                <button class="letter-button" data-letter="f">F</button>
+                <button class="letter-button" data-letter="g">G</button>
+                <button class="letter-button" data-letter="h">H</button>
+                <button class="letter-button" data-letter="i">I</button>
+                <button class="letter-button" data-letter="j">J</button>
+                <button class="letter-button" data-letter="k">K</button>
+                <button class="letter-button" data-letter="l">L</button>
+                <button class="letter-button" data-letter="m">M</button>
+                <button class="letter-button" data-letter="n">N</button>
+                <button class="letter-button" data-letter="o">O</button>
+                <button class="letter-button" data-letter="p">P</button>
+                <button class="letter-button" data-letter="q">Q</button>
+                <button class="letter-button" data-letter="r">R</button>
+                <button class="letter-button" data-letter="s">S</button>
+                <button class="letter-button" data-letter="t">T</button>
+                <button class="letter-button" data-letter="u">U</button>
+                <button class="letter-button" data-letter="v">V</button>
+                <button class="letter-button" data-letter="w">W</button>
+                <button class="letter-button" data-letter="x">X</button>
+                <button class="letter-button" data-letter="y">Y</button>
+                <button class="letter-button" data-letter="z">Z</button>
+                <!-- <button class="letter-button" data-letter="b">B</button> -->
+            </div>
+        </div>
+        <div class="buttons" id="buttons">
+            <button class="btnPlayAgain" id="play-again">Jugar de nuevo</button>
+            <a class="btnRegresar" type="button"  href="./menu_juego.html">Regresar</a>
+        </div>    
+    </div>
+    <script src="./JS/scriptAhorcado.js"></script>
+</body>
+</html>

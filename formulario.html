@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+	<link rel="stylesheet" href="./CSS/estilos_formularioBra.css">
+	<link rel="icon" href="./recursos/img/encabezado.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FORMATO AUTORIZACIONES.</title>
+</head>
+<body>
+	<div class="formulario">
+		<div class="container" id="container">
+			<div class="arriba">
+				<div class="titulo">FORMATO TRATAMIENTO Y AUTORIZACIONES</div>
+			</div>
+			<div class="sub-container">
+				<p class="f_titulo">Formato consulta centrales de riesgo y tratamiento de datos personales.</p>
+				<button class="boton-enviar" id="botonEnviar" >Enviar</button>
+				<button class="boton_regre" id="miBoton"><a href="./index_video2.html">Regresar al video</a></button>
+			</div>
+			<form action="" id="miFormulario" method="post">
+				<p class="f_titulo1">FORMATO CONSULTA CENTRALES DE RIESGO Y TRATAMIENTO DE DATOS PERSONALES.</p>
+				<div class="foncon">
+					<h5 class="reque">CÓDIGO POS TIENDA <span style="color: red;">(*)</span></h5>
+					<div class="input-group">
+						<input type="text" oninput="validarNumero(this)" class="form-control" aria-describedby="button-addon2" required>
+					</div>
+					<h5>DOCUMENTO VENDEDOR<span style="color: red;">(*)</span></h5>
+					<input type="text" id="numero" oninput="validarNumero(this)" class="form-control" minlength="6" maxlength="10" required>
+					<h5>FECHA AUTORIZACION DE CONSULTA<span style="color: red;">(*)</span></h5>
+					<div class="input-group mb-3" >
+						<input type="date" class="form-control" aria-describedby="button-addon2" required>
+					</div>
+					<h5>NOMBRE Y APELLIDO<span style="color: red;">(*)</span></h5>
+					<div class="input-group mb-3" >
+						<input type="text" class="form-control" maxlength="50" id="letrasInput2" oninput="validarInput2()" required>
+					</div>
+					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
+					<select id="departamento" onchange="cargarMunicipios()" id="campo5" required>
+						<option value=""></option>
+						<option value="antioquia">Antioquia</option>
+						<option value="atlantico">Atlántico</option>
+						<option value="bogota">Bogotá D.C.</option>
+						<option value="valle">Valle del Cauca</option>
+						<option value="santander">Santander</option>
+						<option value="caldas">Caldas</option>
+						<option value="risaralda">Risaralda</option>
+						<option value="quindio">Quindío</option>
+						<option value="bolivar">Bolívar</option>
+						<option value="magdalena">Magdalena</option>
+						<option value="tolima">Tolima</option>
+						<option value="norteSantander">Norte de Santander</option>
+					</select>
+					<br>
+					<h5>MUNICIPIO<span style="color: red;">(*)</span></h5>
+					<select id="municipio" required>
+						<!-- Las opciones de municipios se cargarán dinámicamente -->
+					</select>
+				</div>
+				<br>
+				<p class="f_titulo1">DATOS USUARIO</p>
+				<div class="foncon">
+					<h5>ACEPTA CONSULTA EN CENTRALES DE RIESGO<span style="color: red;">(*)</span></h5>
+					<select id="consultaRiesgo2" required onchange="verificarSeleccion2()">
+						<option value=""></option>
+						<option value="SI">SI</option>
+						<option value="NO">NO</option>
+					</select>
+					<div class="custom-alert2" id="customAlert2">
+						<h4 style="color: rgb(235, 219, 0);">¡Recuerda!</h4>
+						<h5 style="color: black; ">Debes seleccionar "SI" en la opción de consulta en centrales de riesgo para continuar.</h5>
+					</div>
+					<h5>NOMBRE Y APELLIDO USUARIO<span style="color: red;">(*)</span></h5>
+					<div class="input-group mb-3" >
+						<input type="text" class="form-control" id="nombreApellidoUsuario" aria-describedby="button-addon2" maxlength="50" required>
+					</div>
+					<h5>TIPO DOCUMENTO<span style="color: red;">(*)</span></h5>
+					<select class="form-select" required>
+						<option>C.C</option>
+						<option>C.E</option>
+					</select>
+					<h5>NÚMERO DOCUMENTO<span style="color: red;">(*)</span></h5>
+					<input type="text" id="numero" oninput="validarNumero(this)" class="form-control" minlength="6" maxlength="10" id="campo9" required>
+					<h5>DIRECCIÓN USUARIO<span style="color: red;">(*)</span></h5>
+					<div class="input-group mb-3" >
+						<input type="text" class="form-control" id="campo10" aria-describedby="button-addon2" maxlength="40" required>
+					</div>
+					<h5>NÚMERO DE TELÉFONO<span style="color: red;">(*)</span></h5>
+					<input type="text" id="numero" oninput="validarNumero(this)" class="form-control" id="campo11" maxlength="12" required>
+					<h5>DEPARTAMENTO<span style="color: red;">(*)</span></h5>
+					<select id="departamento2" onchange="cargarMunicipios2()" id="campo12" required>
+						<option value=""></option>
+						<option value="antioquia">Antioquia</option>
+						<option value="atlantico">Atlántico</option>
+						<option value="bogota">Bogotá D.C.</option>
+						<option value="valle">Valle del Cauca</option>
+						<option value="santander">Santander</option>
+						<option value="caldas">Caldas</option>
+						<option value="risaralda">Risaralda</option>
+						<option value="quindio">Quindío</option>
+						<option value="bolivar">Bolívar</option>
+						<option value="magdalena">Magdalena</option>
+						<option value="tolima">Tolima</option>
+						<option value="norteSantander">Norte de Santander</option>
+						<!-- Agrega más opciones de departamentos -->
+					</select>
+					<br>
+					<h5>MUNICIPIO<span style="color: red;" required>(*) </span></h5>
+					<select id="municipio2" id="campo13">
+						<!-- Las opciones de municipios se cargarán dinámicamente -->
+					</select>
+					<h5>CORREO<span style="color: red;">(*)</span></h5>
+					<div class="input-group mb-3" >
+						<input type="email" class="form-control" id="correo1" name="correo1" aria-describedby="button-addon2" maxlength="20" required>
+					</div>
+					<h5>REPETIR CORREO<span style="color: red;">(*)</span></h5>
+					<div class="input-group mb-3" >
+						<input type="email" class="form-control" id="correo2" name="correo2" aria-describedby="button-addon2" maxlength="20" required>
+					</div>
+				</div>
+			</form>
+			<div id="alertaCorreoNoCoincide">
+			</div>
+		</div>	
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="./JS/script_formularioBra.js"></script>
+</body>
+</html>

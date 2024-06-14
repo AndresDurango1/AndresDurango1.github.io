@@ -1,0 +1,897 @@
+ @font-face {
+  font-family: 'tigo';
+  src: url('../recursos/LetraTigo/tigo.ttf');
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  background-color: #f0f0f0;
+  background-image: url(../recursos/img/fondo_cel.jpeg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/*++++++++++++++++++++++++++++++ESTILOS MODAL INICIAL++++++++++++++++++++++++++++++*/
+.modal_ini {
+  width: 70%;
+  height: 70%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal_ini .modal_ini-content {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.modal_ini .modal_ini-content .modal_title {
+  width: 100%;
+  height: 15%;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+.modal_ini .modal_ini-content .mensaje_modal {
+  width: 100%;
+  height: 25%;
+  font-size: 25px;
+  text-align: justify;
+}
+.modal_ini .modal_ini-content .btnVolver, 
+.modal_ini .modal_ini-content .closeModal1 {
+  width: 25%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  border: solid 1px #0056b3;
+  border-radius: 10px;
+  background-color: #0056b3;
+
+}
+.modal_ini .modal_ini-content .btnVolver:hover,
+.modal_ini .modal_ini-content .closeModal1:hover {
+  background-color: #007bff;
+}
+/*++++++++++++++++++++++++++++++ESTILOS SEGUNDO MODAL++++++++++++++++++++++++++++++*/
+.alerta {
+  width: 50%;
+  height: 50%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 10px;
+}
+.alerta .alert_title{
+  width: 100%;
+  height: 15%;
+  color:#0056b3;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+.alerta .mensaje_alerta1{
+  width: 100%;
+  height: 25%;
+  font-size: 25px;
+  text-align: center;
+  color: black;
+}
+.alerta .mensaje_alerta2{
+  width: 100%;
+  height: 25%;
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.alerta .close-alerta {
+  width: 25%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border: solid 1px #0056b3;
+  border-radius: 10px;
+  background-color: #0056b3;
+  cursor: pointer;
+}
+.alerta .close-alerta:hover {
+  background-color: #007bff;
+}
+/*++++++++++++++++++++++++++++++CUBO IMAGENES JUEGOS++++++++++++++++++++++++++++++*/
+#cuboJuegos {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: rotarCubo 10s linear infinite;
+  display: none;
+}
+#cuboJuegos .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+#cuboJuegos .cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+#cuboJuegos .face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: solid 1px gray;
+}
+#cuboJuegos .container .superior {
+  transform: rotateX(90deg) translateZ(170px);
+}
+#cuboJuegos .container .izquierda {
+  transform: rotateY(-90deg) translateZ(250px);
+}
+#cuboJuegos .container .derecha {
+  transform: rotateY(90deg) translateZ(250px);
+}
+#cuboJuegos .container .trasera {
+  transform: rotateY(180deg) translateZ(250px);
+}
+#cuboJuegos .container .frontal {
+  transform: rotateY(0deg) translateZ(250px);
+}
+@keyframes rotarCubo {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg)
+  }
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+/*Estilos para el modal del video de felicitaciones*/
+#videoModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  z-index: 1;
+  display: none; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#videoModal #modal-content {
+  width: 60%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  height: auto;
+}
+#videoModal #modal-content .videofin {
+  width: 90%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.544);
+}
+#videoModal #modal-content .close {
+  width: 15%;
+  height: 10%;
+  margin-top: 1%;
+  cursor: pointer;
+  border: solid 1px #007bff ;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #007bff;
+}
+.btn_finalizar {
+  width: 25%;
+  height: 10%;
+  margin-top: 5%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: solid 1px #007bff ;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color:#007bff;
+}
+.btn_finalizar:hover {
+  border: solid 1px #0056b3;
+  background-color: solid 1px #0056b3;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++vertical++++++++++++++++++++++++++++++++++*/
+@media (min-width: 320px) and (max-width: 544px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini {
+    width: 90%;
+    height: 90%;
+  }
+  .modal_ini .modal_ini-content {
+    width: 90%;
+    height: 60%;
+    padding: 10px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 25px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 18px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 50%;
+    height: 10%;
+    font-size: 15px;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    width: 80%;
+    height: 60%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 20px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 15px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 18px;
+  }
+  .alerta .close-alerta {
+    width: 30%;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    width: 200px;
+    height: 200px;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(71px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(100px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(100px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 60%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 50%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 60%;
+    height: 8%;
+    margin-top: 10%;
+    font-size: 15px;
+  } 
+}
+@media (min-width: 545px) and (max-width: 640px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini .modal_ini-content {
+    width: 70%;
+    height: 60%;
+    padding: 10px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 25px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 18px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 30%;
+    height: 10%;
+    font-size: 15px;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    height: 60%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 20px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 15px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 18px;
+  }
+  .alerta .close-alerta {
+    font-size: 15px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    width: 300px;
+    height: 300px;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(102px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(150px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(150px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(150px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(150px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 60%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 30%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 60%;
+    height: 8%;
+    margin-top: 10%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 641px) and (max-width: 780px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini .modal_ini-content {
+    width: 70%;
+    height: 60%;
+    padding: 10px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 35px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 25px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 30%;
+    height: 10%;
+    font-size: 20px;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    height: 60%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 35px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 25px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 30px;
+  }
+  .alerta .close-alerta {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    width: 450px;
+    height: 450px;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(152px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(225px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(225px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(225px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(225px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 60%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 30%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 60%;
+    height: 8%;
+    margin-top: 10%;
+    font-size: 20px;
+  }  
+}
+@media (min-width: 781px) and (max-width: 1023px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini .modal_ini-content {
+    width: 80%;
+    height: 60%;
+    padding: 15px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 40px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 30px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 30%;
+    height: 10%;
+    font-size: 25px;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    width: 80%;
+    height: 60%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 40px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 30px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 35px;
+  }
+  .alerta .close-alerta {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    width: 500px;
+    height: 500px;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(169px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(250px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(250px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(250px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(250px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 60%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 30%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 60%;
+    height: 8%;
+    margin-top: 10%;
+    font-size: 25px;
+  }  
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini .modal_ini-content {
+    width: 80%;
+    height: 80%;
+    padding: 15px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 35px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 25px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 30%;
+    height: 10%;
+    font-size: 20px;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    width: 80%;
+    height: 60%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 35px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 25px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 30px;
+  }
+  .alerta .close-alerta {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    width: 300px;
+    height: 300px;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(102px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(150px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(150px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(150px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(150px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 80%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 25%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 50%;
+    height: 8%;
+    margin-top: 10%;
+    font-size: 20px;
+  }  
+}
+/*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
+@media (orientation: landscape) and (max-height:385px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini .modal_ini-content {
+    width: 70%;
+    height: 80%;
+    padding: 10px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 25px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 15px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 45%;
+    height: 10%;
+    font-size: 15px;
+    margin: 1%;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    height: 80%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 20px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 15px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 18px;
+  }
+  .alerta .close-alerta {
+    font-size: 15px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    top: 10%;
+    width: 200px;
+    height: 200px;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(70px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(100px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(100px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 60%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 30%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 60%;
+    height: 8%;
+    margin-top: 10%;
+    font-size: 15px;
+  }   
+}
+@media (orientation: landscape) and (min-height:410px) and (max-height:550px) {
+  /*ESTILOS PRIMER MODAL*/
+  .modal_ini .modal_ini-content {
+    width: 70%;
+    height: 80%;
+    padding: 10px;
+  }
+  .modal_ini .modal_ini-content .modal_title {
+    height: 10%;
+    font-size: 25px;
+  }
+  .modal_ini .modal_ini-content .mensaje_modal {
+    height: 30%;
+    font-size: 18px;
+  }
+  .modal_ini .modal_ini-content .btnVolver, 
+  .modal_ini .modal_ini-content .closeModal1 {
+    width: 45%;
+    height: 10%;
+    font-size: 15px;
+  }
+  /*ESTILOS SEGUNDO MODAL - ALERTA*/
+  .alerta {
+    height: 70%;
+    padding: 5px;
+  }
+  .alerta .alert_title{
+    height: 15%;
+    font-size: 20px;
+  }
+  .alerta .mensaje_alerta1{
+    height: 25%;
+    font-size: 15px;
+  }
+  .alerta .mensaje_alerta2{
+    height: 20%;
+    font-size: 18px;
+  }
+  .alerta .close-alerta {
+    font-size: 15px;
+    cursor: pointer;
+  }
+  /*ESTILOS CUBO IMAGENES JUEGOS*/
+  #cuboJuegos {
+    width: 250px;
+    height: 250px;
+    top: 10%;
+  }
+  #cuboJuegos .container .superior {
+    transform: rotateX(90deg) translateZ(87px);
+  }
+  #cuboJuegos .container .izquierda {
+    transform: rotateY(-90deg) translateZ(125px);
+  }
+  #cuboJuegos .container .derecha {
+    transform: rotateY(90deg) translateZ(125px);
+  }
+  #cuboJuegos .container .trasera {
+    transform: rotateY(180deg) translateZ(125px);
+  }
+  #cuboJuegos .container .frontal {
+    transform: rotateY(0deg) translateZ(125px);
+  }
+  @keyframes rotarCubo {
+    0% {
+      transform: rotateX(-30deg) rotateY(0deg)
+    }
+    100% {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  /*Estilos para el modal del video de felicitaciones*/
+  #videoModal #modal-content {
+    width: 95%;
+    height: 60%;
+    padding: 5px;
+  }
+  #videoModal #modal-content .videofin {
+    width: 100%;
+    height: 90%;
+  }
+  #videoModal #modal-content .close {
+    width: 30%;
+    font-size: 15px;
+  }
+  #btnFinalizar {
+    width: 60%;
+    height: 8%;
+    margin-top: 13%;
+    font-size: 15px;
+  } 
+}
