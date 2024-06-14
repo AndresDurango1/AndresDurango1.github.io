@@ -163,7 +163,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: solid 1px red;
+    border: solid 1px green;
     margin-bottom: 0%;
   }
   .container .sub-container .side {
