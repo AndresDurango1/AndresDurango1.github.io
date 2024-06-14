@@ -159,11 +159,10 @@ body {
 @media (min-width: 320px) and (max-width: 544px) {
   .container .sub-container {
     width: 90%;
-    height: 85%;
+    height: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: solid 1px green;
     margin-bottom: 0%;
   }
   .container .sub-container .side {
@@ -184,7 +183,6 @@ body {
     width: 20%;
     font-size: 15px;
     margin: 0%;
-    border: solid 1px red;
   }
   .container .modal .modal-content {
     width: 70%;
