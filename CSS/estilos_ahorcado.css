@@ -254,7 +254,7 @@
     .contenedorPrincipal .buttons{
         width: 100%;
         height: 10%;
-        margin: 1%;
+        /* margin: 1%; */
     }
     .contenedorPrincipal .buttons .btnPlayAgain,
     .contenedorPrincipal .buttons .btnRegresar {
