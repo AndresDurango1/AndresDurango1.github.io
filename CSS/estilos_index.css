@@ -360,7 +360,7 @@ body {
 #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
     width: 70%;
     height: 30%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     color: white;

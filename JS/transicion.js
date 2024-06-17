@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Después de traer todos los videos de post-venta desde el DOM, se asignan los elementos en orden dentro del arreglo para luego poderlos usar
     videos = [vidIntro, video1, video2, video3, video4, video5, video6, video7, video8];
 });
+const btnJuegos = document.getElementById('btnJuegos');
 //Despues de obtener todos los elementos del INDEX.HTML se almacenan en arreglos para que mas adelante se puedan recorrer de una mejor manera (con funciones)
 var imagenesVideos = [imgIntro, imgReposicionSim, imgProcesoBiometrico, imgCesionPrepago, imgProcesoReposicion, imgCambioPlan, imgNumeroPrivado, imgCambioNumero, imgRegistroEquipos];
 var imagenesIconosVideos = [imgIconoVideo0, imgIconoVideo1, imgIconoVideo2, imgIconoVideo3, imgIconoVideo4, imgIconoVideo5, imgIconoVideo6, imgIconoVideo7, imgIconoVideo8];
@@ -91,8 +92,6 @@ function verVideos() {
 //A continuacion está la funcion para controlar el orden de reproducción de los videos.
 function reproducirVideo(indice) {
     imagenesVideos[indice].style.display = "block";
-    console.log(imagenesVideos.length);
-    console.log(videos[indice].id);
     if (indice <= 8) {
         contenedorVideosPostVenta.style.display = "block";
         videos[indice].style.display = "block";
@@ -108,6 +107,8 @@ function reproducirVideo(indice) {
             }
             else {
                 contenedorVideosPostVenta.style.display = "none";
+                btnJuegos.style.display = "flex";
+                
             }
         })
     }
