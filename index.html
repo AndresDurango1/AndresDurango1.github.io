@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/estilos_index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+    <title>TIGO POSVENTAS</title>
+</head>
+<body>
+    <!--Inicialmente se debe validar si se està trabajando en un dispositivo mòvil y se envìa la alerta para solicitar la rotacion del dispositivo-->
+    <!--Poner un SweetAlert para que se vea mejor la alerta de rotar el dispositivo-->
+    <div id="contenedorVideoInicial">
+        <div id="contenedorVideoRigo">
+            <video id="videoTiendaRigo" src="./recursos/videos/tienda_b2c.mp4" controls ></video>
+        </div>
+        <!--Una vez que se termina el vìdeo se oculta el contenedor de este video, en simultaneo se cambia la imagen de fondo por la imagen de transiciòn donde se tendran dos botones
+                uno cargará en la misma pagina el contenedor de los videos, el otro debe llevar a la pagina de juegos-->
+        <div id="contenedorImagenTransicion">
+            <img id="imagenTransicion" src="./recursos/img/escritorio.png" alt="">
+            <video id ="videoInmersion" src="./recursos/videos/inmersion.mp4"></video>
+            <button id="btnVerVideos" onclick="verVideos()">VER VIDEOS</button>
+        </div>
+    </div>
+    <div id="contenedorPrincipal">
+        <div id="contenedorPrincipalGrid">
+            <div id="contenedorEncabezado">
+                <!-- HEADER -->
+                <!-- Primera línea: Botones de la imagen -->
+                <div class="contenedor1">
+                    <div class="opciones">
+                        <div class="archivo">Archivo</div>
+                        <div class="inicio">Inicio</div>
+                        <div class="compartir">Compartir</div>
+                        <div class="vista">Vista</div>
+                    </div>
+                    <div class="botones">
+                        <img src="./recursos/img/windw_l.png" alt="">
+                    </div>
+                </div>
+                <!-- Segunda línea: Recuadros -->
+                <div class="contenedor2">
+                    <div class="titulo">VIDEOS POST VENTAS BÁSICAS</div>
+                    <div class="recargar">
+                        <img src="./recursos/img/recargar.png" alt="">
+                    </div>
+                    <div class="buscar">BUSCAR</div>
+                </div>
+            </div>
+            <div id="contenedorBody">
+                    <!-- BARRA LATERAL -->
+                    <div class="contenedorPrincipalBarraLateral">
+                        <div class="carpetas">
+                            <div class="escritorio">Escritorio</div>
+                            <div class="descargas">Descargas</div>
+                            <div class="documentos">Documentos</div>
+                            <div class="imagenes">Imágenes</div>
+                            <div class="videosPost">VIDEOS POST -</div>
+                            <div class="onedrive">OneDrive</div>
+                            <div class="esteEquipo">Este equipo</div>
+                        </div>
+                        <div class="leyenda">9 elementos</div>
+                    </div>
+                <div id="contenedorVideos">
+                    <div class="gridItem3">
+                        <img id="imgIconoVideo0" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgIntro" class="imagen1" src="./recursos/img/intro-COPIA.png" alt="" onclick="reproducirVideo(0)">
+                    </div>
+                    <div class="gridItem4">
+                        <img id="imgIconoVideo1" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgReposicionSim" class="imagen2" src="./recursos/img/1-COPIA.png" alt="" onclick="reproducirVideo(1)">
+                    </div>
+                    <div class="gridItem5">
+                        <img id="imgIconoVideo2" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgProcesoBiometrico" class="imagen3" src="./recursos/img/2-COPIA.png" alt="" onclick="reproducirVideo(2)">
+                    </div>
+                    <div class="gridItem6">
+                        <img id="imgIconoVideo3" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgCesionPrepago" class="imagen4" src="./recursos/img/3-COPIA.png" alt="" onclick= "reproducirVideo(3)">
+                    </div>
+                    <div class="gridItem7">
+                        <img id="imgIconoVideo4" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgProcesoReposicion" class="imagen5" src="./recursos/img/4-COPIA.png" alt="" onclick="reproducirVideo(4)">
+                    </div>
+                    <div class="gridItem8">
+                        <img id="imgIconoVideo5" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgCambioPlan" class="imagen6" src="./recursos/img/5-COPIA.png" alt="" onclick="reproducirVideo(5)">
+                    </div>
+                    <div class="gridItem9">
+                        <img id="imgIconoVideo6" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgNumeroPrivado" class="imagen7" src="./recursos/img/6-COPIA.png" alt="" onclick="reproducirVideo(6)">
+                    </div>
+                    <div class="gridItem10">
+                        <img id="imgIconoVideo7" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgCambioNumero" class="imagen8" src="./recursos/img/7-COPIA.png" alt="" onclick="reproducirVideo(7)">
+                    </div>
+                    <div class="gridItem11">
+                        <img id="imgIconoVideo8" class="img1" src="./recursos/img/carpetadevideosIconoVideo.jpg"
+                            alt="">
+                        <img id="imgRegistroEquipos" class="imagen9" src="./recursos/img/8-COPIA.png" alt="" onclick="reproducirVideo(8)">
+                    </div>
+                    <div class="gridItem12">
+                        <a role="button" class="btnJuegos" href="./Juegos.html">JUEGOS</a>
+                    </div>
+                    <div id="contenedorVideosPostVenta">
+                        <video id="video0" src="./recursos/videos/intro.mp4" controls></video>
+                        <video id="video1" src="./recursos/videos/video1.mp4" controls></video>
+                        <video id="video2" src="./recursos/videos/video2.mp4" controls></video>
+                        <video id="video3" src="./recursos/videos/video3.mp4" controls></video>
+                        <video id="video4" src="./recursos/videos/video4.mp4" controls></video>
+                        <video id="video5" src="./recursos/videos/video5.mp4" controls></video>
+                        <video id="video6" src="./recursos/videos/video6.mp4" controls></video>
+                        <video id="video7" src="./recursos/videos/video7.mp4" controls></video>
+                        <video id="video8" src="./recursos/videos/video8.mp4" controls></video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const contenedor = document.getElementById('contenedorPrincipal');
+            contenedor.style.display = 'none';
+        });
+    </script>
+    <script src="./JS/transicion.js"></script>
+</body>
+</html>

@@ -1,0 +1,814 @@
+@font-face {
+    font-family: 'tigo';
+    src: url('../recursos/LetraTigo/tigo.ttf');
+    text-align: center;
+    align-items: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    background: url(../recursos/img/fondo.png);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    color: white;
+}  
+.contenedorPrincipal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contenedorPrincipal .titulo,
+.contenedorPrincipal .subtitulo,
+.contenedorPrincipal .recomendacion {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.contenedorPrincipal .contenedorHangman {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorPrincipal .contenedorHangman .hangman {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorPrincipal .sub-container {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contenedorPrincipal .sub-container .word {
+    width: 80%;
+    height: 35%;
+    font-size: 30px;
+    margin: 1%;
+    color:white;
+    margin-bottom: 0%;
+}
+.contenedorPrincipal .sub-container .letters {
+    width: 80%;
+    height: 35%;
+    font-size: 24px;
+    color:white;
+    margin: 1%;
+    margin-top: 0%;
+}
+.contenedorPrincipal .sub-container .cajon {
+    width: 80%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+.contenedorPrincipal .sub-container .cajon .message {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+.contenedorPrincipal #contenedorTeclado{
+    width: 60%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px white;
+}
+.contenedorPrincipal #contenedorTeclado label {
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.contenedorPrincipal #contenedorTeclado .letter-buttons {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+    width: 5%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    border-radius: 10px; 
+    text-decoration: none;
+    text-align: center; 
+    font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-size: 15px;
+    border: solid 1px white;
+    transition: background-color 0.3s ease;
+}
+.contenedorPrincipal .buttons{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+.contenedorPrincipal .buttons .btnPlayAgain,
+.contenedorPrincipal .buttons .btnRegresar {
+    width: 15%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: all 0.06s ease;
+}
+.contenedorPrincipal .buttons .btnPlayAgain:hover,
+.contenedorPrincipal .buttons .btnRegresar:hover {
+    box-shadow: 0 0 20px #007bff;
+    border-color: #007bff;
+}
+.contenedorPrincipal .contenedorHangman circle, 
+.contenedorPrincipal .contenedorHangman line {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 4;
+}
+/* Estilos para las partes del muñeco */
+#head, #body, #left-arm, #right-arm, #left-leg, #right-leg {
+    display: none;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 4;
+    color: #ffffff;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++vertical++++++++++++++++++++++++++++++++++*/
+@media (min-width:320px) and (max-width:544px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 20px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 15px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 50%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 70%;
+        height: 80%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 30%;
+        font-size: 28px;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 30%;
+        font-size: 18px;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 40%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 30%;
+        font-size: 18px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 50%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 15px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 10%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 65%;
+        font-size: 15px;
+    }    
+}
+@media (min-width:545px) and (max-width: 640px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 35px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 25px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 70%;
+        height: 80%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 30%;
+        font-size: 40px;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 30%;
+        font-size: 40px;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 40%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 35px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 30%;
+        font-size: 35px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 50%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 20px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 10%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 65%;
+        font-size: 25px;
+    }
+}
+@media (min-width:641px) and (max-width: 780px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 40px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 30px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 70%;
+        height: 80%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 30%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 30%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 40%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 30%;
+        font-size: 40px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 55%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 25px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 10%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 65%;
+        font-size: 30px;
+    }
+}
+@media (min-width:781px) and (max-width: 1023px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 40px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 40px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 70%;
+        height: 80%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 30%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 30%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 40%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 30%;
+        font-size: 45px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 55%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 30px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 10%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 65%;
+        font-size: 35px;
+    }
+}
+@media (min-width:1024px) and (max-width: 1280px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 35px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 20px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 70%;
+        height: 80%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 45%;
+        font-size: 25px;
+        margin-bottom: 0%;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 40%;
+        font-size: 25px;
+        margin-top: 0%;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 40%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 30%;
+        font-size: 25px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 55%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 20px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 10%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 70%;
+        font-size: 20px;
+    }
+}
+/* @media (min-width: 1281px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 35px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 20px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 70%;
+        height: 80%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 45%;
+        font-size: 25px;
+        margin-bottom: 0%;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 40%;
+        font-size: 25px;
+        margin-top: 0%;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 40%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 30%;
+        font-size: 25px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 55%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 20px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 10%;
+        margin: 1%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 70%;
+        font-size: 20px;
+    }
+} */
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
+@media (orientation:landscape) and (max-height:400px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 18px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 12px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 35%;
+        font-size: 20px;
+        margin: 0%;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 35%;
+        margin: 0%;
+        font-size: 20px;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 30%;
+        margin: 0%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 22%;
+        margin: 0%;
+        font-size: 18px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 60%;
+        margin: 0%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 15px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 15%;
+        margin: 0%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 65%;
+        font-size: 15px;
+    }    
+}
+@media (orientation:landscape) and (min-height: 410px) and (max-height: 550px) {
+    .contenedorPrincipal .titulo,
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        width: 100%;
+        height: 10%;
+    }
+    .contenedorPrincipal .titulo {
+        font-size: 18px;
+    }
+    .contenedorPrincipal .subtitulo,
+    .contenedorPrincipal .recomendacion {
+        font-size: 12px;
+    }
+    .contenedorPrincipal .contenedorHangman {
+        width: 100%;
+        height: 60%;
+    }
+    .contenedorPrincipal .contenedorHangman .hangman {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0%;
+    }
+    .contenedorPrincipal .sub-container {
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal .sub-container .word {
+        width: 100%;
+        height: 35%;
+        font-size: 20px;
+        margin: 0%;
+    }
+    .contenedorPrincipal .sub-container .letters {
+        width: 100%;
+        height: 35%;
+        margin: 0%;
+        font-size: 20px;
+    }
+    .contenedorPrincipal .sub-container .cajon {
+        width: 100%;
+        height: 30%;
+        margin: 0%;
+    }
+    .contenedorPrincipal .sub-container .cajon .message {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+    }
+    .contenedorPrincipal #contenedorTeclado{
+        width: 100%;
+        height: 40%;
+    }
+    .contenedorPrincipal #contenedorTeclado label {
+        width: 100%;
+        height: 22%;
+        margin: 0%;
+        font-size: 18px;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons {
+        width: 100%;
+        height: 60%;
+        margin: 0%;
+    }
+    .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
+        width: 5%;
+        height: 50%;
+        font-size: 15px;
+    }
+    .contenedorPrincipal .buttons{
+        width: 100%;
+        height: 15%;
+        margin: 0%;
+    }
+    .contenedorPrincipal .buttons .btnPlayAgain,
+    .contenedorPrincipal .buttons .btnRegresar {
+        width: 40%;
+        height: 65%;
+        font-size: 15px;
+    }    
+}

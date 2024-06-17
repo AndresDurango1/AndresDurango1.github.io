@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/estilosSopaLetras.css">
+    <title>Sopa de Letras</title>
+    <link rel="icon" href="./recursos/img/tigo.png">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Juega la sopa de Letras</h1>
+        <h3>Palabras a encontrar</h3>
+        <ol>
+            <li>CRM</li>
+            <li>LENGUAJE</li>
+            <li>LABORATORIO</li>
+            <li>SIMCARD</li>
+        </ol>
+        <form id="espacio">
+            <table class="tabla" border="2px" bordercolor="#050430" bgcolor="#e2dee1" >
+                <tr>
+                    <th width="20" height="20">K</th>
+                    <th width="20" height="20">V</th>
+                    <th width="20" height="20">P</th>
+                    <th width="20" height="20" id="celda4" onclick="comprobar4()">C</th>
+                    <th width="20" height="20" id="celda5" onclick="comprobar5()">R</th>
+                    <th width="20" height="20" id="celda6" onclick="comprobar6()">M</th>
+                    <th width="20" height="20">D</th>
+                    <th width="20" height="20">K</th>
+                    <th width="20" height="20">J</th>
+                    <th width="20" height="20">P</th>
+                    <th width="20" height="20">Z</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">M</th>
+                    <th width="20" height="20">N</th>
+                    <th width="20" height="20">K</th>
+                    <th width="20" height="20">P</th>
+                    <th width="20" height="20">P</th>
+                    <th width="20" height="20">R</th>
+                    <th width="20" height="20">A</th>
+                    <th width="20" height="20">B</th>
+                    <th width="20" height="20">C</th>
+                    <th width="20" height="20">O</th>
+                    <th width="20" height="20">L</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">Z</th>
+                    <th width="20" height="20">Q</th>
+                    <th width="20" height="20">I</th>
+                    <th width="20" height="20">S</th>
+                    <th width="20" height="20">T</th>
+                    <th width="20" height="20" id="celdaC6" onclick="comprobarC6()">E</th>
+                    <th width="20" height="20">U</th>
+                    <th width="20" height="20">W</th>
+                    <th width="20" height="20">X</th>
+                    <th width="20" height="20">E</th>
+                    <th width="20" height="20">P</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">J</th>
+                    <th width="20" height="20">C</th>
+                    <th width="20" height="20">D</th>
+                    <th width="20" height="20">T</th>
+                    <th width="20" height="20">O</th>
+                    <th width="20" height="20" id="celdaD6" onclick="comprobarD6()">J</th>
+                    <th width="20" height="20">F</th>
+                    <th width="20" height="20">L</th>
+                    <th width="20" height="20">O</th>
+                    <th width="20" height="20">H</th>
+                    <th width="20" height="20">I</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20" id="celdaE1" onclick="comprobarE1()">L</th>
+                    <th width="20" height="20" id="celdaE2" onclick="comprobarE2()">A</th>
+                    <th width="20" height="20" id="celdaE3" onclick="comprobarE3()">B</th>
+                    <th width="20" height="20" id="celdaE4" onclick="comprobarE4()">O</th>
+                    <th width="20" height="20" id="celdaE5" onclick="comprobarE5()">R</th>
+                    <th width="20" height="20" id="celdaE6" onclick="comprobarE6()">A</th>
+                    <th width="20" height="20" id="celdaE7" onclick="comprobarE7()">T</th>
+                    <th width="20" height="20" id="celdaE8" onclick="comprobarE8()">O</th>
+                    <th width="20" height="20" id="celdaE9" onclick="comprobarE9()">R</th>
+                    <th width="20" height="20" id="celdaE10" onclick="comprobarE10()">I</th>
+                    <th width="20" height="20" id="celdaE11" onclick="comprobarE11()">O</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">Z</th>
+                    <th width="20" height="20">Q</th>
+                    <th width="20" height="20">M</th>
+                    <th width="20" height="20">X</th>
+                    <th width="20" height="20">H</th>
+                    <th width="20" height="20" id="celdaF6" onclick="comprobarF6()">U</th>
+                    <th width="20" height="20">R</th>
+                    <th width="20" height="20">T</th>
+                    <th width="20" height="20">V</th>
+                    <th width="20" height="20">Z</th>
+                    <th width="20" height="20">M</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">V</th>
+                    <th width="20" height="20">Y</th>
+                    <th width="20" height="20">N</th>
+                    <th width="20" height="20">J</th>
+                    <th width="20" height="20">A</th>
+                    <th width="20" height="20" id="celdaG6" onclick="comprobarG6()">G</th>
+                    <th width="20" height="20">L</th>
+                    <th width="20" height="20">O</th>
+                    <th width="20" height="20">R</th>
+                    <th width="20" height="20">T</th>
+                    <th width="20" height="20">I</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">T</th>
+                    <th width="20" height="20">B</th>
+                    <th width="20" height="20">E</th>
+                    <th width="20" height="20">O</th>
+                    <th width="20" height="20">K</th>
+                    <th width="20" height="20" id="celdaH6" onclick="comprobarH6()">N</th>
+                    <th width="20" height="20">I</th>
+                    <th width="20" height="20">Q</th>
+                    <th width="20" height="20">F</th>
+                    <th width="20" height="20">D</th>
+                    <th width="20" height="20">R</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">I</th>
+                    <th width="20" height="20">Z</th>
+                    <th width="20" height="20">F</th>
+                    <th width="20" height="20">Q</th>
+                    <th width="20" height="20">E</th>
+                    <th width="20" height="20" id="celdaE" onclick="comprobarE()">E</th>
+                    <th width="20" height="20">O</th>
+                    <th width="20" height="20">D</th>
+                    <th width="20" height="20">X</th>
+                    <th width="20" height="20">U</th>
+                    <th width="20" height="20">S</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">H</th>
+                    <th width="20" height="20">J</th>
+                    <th width="20" height="20">D</th>
+                    <th width="20" height="20">C</th>
+                    <th width="20" height="20">P</th>
+                    <th width="20" height="20" id="celdaJ6" onclick="comprobarJ6()">L</th>
+                    <th width="20" height="20">A</th>
+                    <th width="20" height="20">B</th>
+                    <th width="20" height="20">X</th>
+                    <th width="20" height="20">T</th>
+                    <th width="20" height="20">Z</th>
+                </tr>
+                <tr>
+                    <th width="20" height="20">A</th>
+                    <th width="20" height="20">Q</th>
+                    <th width="20" height="20" id="celdaI3" onclick="comprobarI3()">S</th>
+                    <th width="20" height="20" id="celdaI4" onclick="comprobarI4()">I</th>
+                    <th width="20" height="20" id="celdaI5" onclick="comprobarI5()">M</th>
+                    <th width="20" height="20" id="celdaI6" onclick="comprobarI6()">C</th>
+                    <th width="20" height="20" id="celdaI7" onclick="comprobarI7()">A</th>
+                    <th width="20" height="20" id="celdaI8" onclick="comprobarI8()">R</th>
+                    <th width="20" height="20" id="celdaI9" onclick="comprobarI9()">D</th>
+                    <th width="20" height="20">Z</th>
+                    <th width="20" height="20">F</th>
+                </tr>
+            </table>
+            <a class="btnRegresar" role="button" href="./Juegos.html">REGRESAR</a>
+        </form>
+    </div>
+<script src="./JS/scriptSopaLetras.js"></script>
+</body>
+</html>
