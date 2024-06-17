@@ -164,7 +164,7 @@ body {
   }
   .swal2-container .swal2-popup {
     width: 70%;
-    height: 60%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

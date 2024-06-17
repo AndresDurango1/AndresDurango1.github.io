@@ -159,7 +159,7 @@ body {
 @media (min-width: 320px) and (max-width: 544px) {
   .container .sub-container {
     width: 90%;
-    height: 75%;
+    height: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
