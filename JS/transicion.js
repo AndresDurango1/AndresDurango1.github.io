@@ -43,6 +43,22 @@ document.addEventListener('DOMContentLoaded', function () {
     //Después de traer todos los videos de post-venta desde el DOM, se asignan los elementos en orden dentro del arreglo para luego poderlos usar
     videos = [vidIntro, video1, video2, video3, video4, video5, video6, video7, video8];
 });
+//BOTONES CERRAR DE CADA VIDEO
+var botonesCerrar;
+document.addEventListener('DOMContentLoaded', function () {
+    var btnCerrar0 = document.getElementById("btnCerrar0");
+    var btnCerrar1 = document.getElementById("btnCerrar1");
+    var btnCerrar2 = document.getElementById("btnCerrar2");
+    var btnCerrar3 = document.getElementById("btnCerrar3");
+    var btnCerrar4 = document.getElementById("btnCerrar4");
+    var btnCerrar5 = document.getElementById("btnCerrar5");
+    var btnCerrar6 = document.getElementById("btnCerrar6");
+    var btnCerrar7 = document.getElementById("btnCerrar7");
+    var btnCerrar8 = document.getElementById("btnCerrar8");
+    //Después de traer todos los videos de post-venta desde el DOM, se asignan los elementos en orden dentro del arreglo para luego poderlos usar
+    botonesCerrar = [btnCerrar0, btnCerrar1, btnCerrar2, btnCerrar3, btnCerrar4, btnCerrar5, btnCerrar6, btnCerrar7, btnCerrar8];
+});
+//BOTON PARA REDIRIGIR AL MENU DE JUEGOS
 const btnJuegos = document.getElementById('btnJuegos');
 //Despues de obtener todos los elementos del INDEX.HTML se almacenan en arreglos para que mas adelante se puedan recorrer de una mejor manera (con funciones)
 var imagenesVideos = [imgIntro, imgReposicionSim, imgProcesoBiometrico, imgCesionPrepago, imgProcesoReposicion, imgCambioPlan, imgNumeroPrivado, imgCambioNumero, imgRegistroEquipos];
@@ -92,14 +108,15 @@ function verVideos() {
 //A continuacion está la funcion para controlar el orden de reproducción de los videos.
 function reproducirVideo(indice) {
     imagenesVideos[indice].style.display = "block";
+    botonesCerrar.forEach(boton => boton.style.display = "none")
     if (indice <= 8) {
-        contenedorVideosPostVenta.style.display = "block";
+        contenedorVideosPostVenta.style.display = "flex";
         videos[indice].style.display = "block";
         videos[indice].play();
+        botonesCerrar[indice].style.display = "flex";
+        //Evento para cerrar el contenedorVideosPostVenta una vez finaliza el video que se está reproduciendo. Ademas se pausa el video y se devueve al segundo cero para que se reproduzca desde el inicio cuando se vuelva a abrir.
         videos[indice].addEventListener("ended", () => {
-            videos[indice].pause();
-            videos[indice].currentTime = 0;
-            videos[indice].style.display = "none"
+            detenerVideo(indice);
             if (indice <= 7) {
             imagenesIconosVideos[indice + 1].style.display = "none";
             imagenesVideos[indice + 1].style.display = "block"
@@ -108,12 +125,16 @@ function reproducirVideo(indice) {
             else {
                 contenedorVideosPostVenta.style.display = "none";
                 btnJuegos.style.display = "flex";
-                
             }
         })
     }
 }
-
+function detenerVideo (indice) {
+    videos[indice].pause();
+    videos[indice].currentTime = 0;
+    videos[indice].style.display = "none";
+    contenedorVideosPostVenta.style.display = "none";
+}
 window.addEventListener('load', () => {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         //Verificar la orientación del dispositivo
