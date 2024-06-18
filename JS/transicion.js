@@ -43,6 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
     //Después de traer todos los videos de post-venta desde el DOM, se asignan los elementos en orden dentro del arreglo para luego poderlos usar
     videos = [vidIntro, video1, video2, video3, video4, video5, video6, video7, video8];
 });
+//CONTENEDORE DE CADA UNO DE LOS VIDEOS
+var contenedoresVideos;
+document.addEventListener('DOMContentLoaded', function () {
+    var contenedorVideo0 = document.getElementById("contenedorVideo0");
+    var contenedorVideo1 = document.getElementById("contenedorVideo1");
+    var contenedorVideo2 = document.getElementById("contenedorVideo2");
+    var contenedorVideo3 = document.getElementById("contenedorVideo3");
+    var contenedorVideo4 = document.getElementById("contenedorVideo4");
+    var contenedorVideo5 = document.getElementById("contenedorVideo5");
+    var contenedorVideo6 = document.getElementById("contenedorVideo6");
+    var contenedorVideo7 = document.getElementById("contenedorVideo7");
+    var contenedorVideo8 = document.getElementById("contenedorVideo8");
+    //Después de traer todos los videos de post-venta desde el DOM, se asignan los elementos en orden dentro del arreglo para luego poderlos usar
+    contenedoresVideos = [contenedorVideo0, contenedorVideo1, contenedorVideo2, contenedorVideo3, contenedorVideo4, contenedorVideo5, contenedorVideo6, contenedorVideo7, contenedorVideo8];
+});
 //BOTONES CERRAR DE CADA VIDEO
 var botonesCerrar;
 document.addEventListener('DOMContentLoaded', function () {
@@ -60,10 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //BOTON PARA REDIRIGIR AL MENU DE JUEGOS
 const btnJuegos = document.getElementById('btnJuegos');
+
 //Despues de obtener todos los elementos del INDEX.HTML se almacenan en arreglos para que mas adelante se puedan recorrer de una mejor manera (con funciones)
 var imagenesVideos = [imgIntro, imgReposicionSim, imgProcesoBiometrico, imgCesionPrepago, imgProcesoReposicion, imgCambioPlan, imgNumeroPrivado, imgCambioNumero, imgRegistroEquipos];
 var imagenesIconosVideos = [imgIconoVideo0, imgIconoVideo1, imgIconoVideo2, imgIconoVideo3, imgIconoVideo4, imgIconoVideo5, imgIconoVideo6, imgIconoVideo7, imgIconoVideo8];
-//Se añade la funcionalidad de que cuando el video de la tienda se termina, los respectivos contendores desaparecen y se reemplazaran con otros. Para esto se usa el addEventListener que "escucha" el evento de finalizaciòn del video para ejectutar la funciòn
+//Se añade la funcionalidad de que cuando el video de la tienda se termina, los respectivos contendores desaparecen y se reemplazaran con otros. Para esto se usa el addEventListener que "escucha" el evento de finalizaciòn del video para ejectutar la función
 videoTiendaRigo.addEventListener("ended", function () {
     contenedorVideo.style.display = "none";
     contenedorImagenTransicion.style.display = "flex";
@@ -108,12 +124,16 @@ function verVideos() {
 //A continuacion está la funcion para controlar el orden de reproducción de los videos.
 function reproducirVideo(indice) {
     imagenesVideos[indice].style.display = "block";
+    //Para empezar se ocultan todos los botones y/o los contenedores individuales de cada video que puedan estar abiertos. Para que luego se muestre unicamente el respectivo boton y contenedor.
     botonesCerrar.forEach(boton => boton.style.display = "none")
+    contenedoresVideos.forEach(contenedorVideo => contenedorVideo.style.display = "none");
+    //Se configura un condicional que controle el orden en el cual se muestran los videos. En este condicional se cambia la propiedad display de varios contenedores para mostrar y ocultar los videos en el orden deseado. Tambien se controla el evento que ocurre cuando el video que está en reproducción termina
     if (indice <= 8) {
         contenedorVideosPostVenta.style.display = "flex";
+        contenedoresVideos[indice].style.display = "flex";
+        botonesCerrar[indice].style.display = "flex";
         videos[indice].style.display = "block";
         videos[indice].play();
-        botonesCerrar[indice].style.display = "flex";
         //Evento para cerrar el contenedorVideosPostVenta una vez finaliza el video que se está reproduciendo. Ademas se pausa el video y se devueve al segundo cero para que se reproduzca desde el inicio cuando se vuelva a abrir.
         videos[indice].addEventListener("ended", () => {
             detenerVideo(indice);
