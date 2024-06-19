@@ -1,192 +1,101 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
 @font-face {
-    font-family: 'tigo';
-    src: url('../recursos/LetraTigo/tigo.ttf');
-    text-align: center;
+  font-family: 'tigo';
+  src: url('../recursos/LetraTigo/tigo.ttf');
+  text-align: center;
 }
 body {
-    background-image: url(../recursos/img/fondo.png);
-    background-size:100% 100%; 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow: none; 
-    font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  background-image: url(../recursos/img/fondo.png);
+  background-size:100% 100%; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
-.containerPrincipal{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0%;
+.containerPrincipal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 .containerPrincipal .titulo{
-    width: 100%;
-    height: 15%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
 }
-.containerPrincipal .containerTarjetas{
-    width: 100%;
+.containerPrincipal .cards {
+    width: 80%;
     height: 80%;
     display: flex;
     flex-wrap: wrap;
+    /* flex-direction: column; */
     justify-content: space-around;
     align-items: center;
+    gap: 15px;
 }
-.containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-.containerPrincipal .containerTarjetas .tarjetaMemoria,
-.containerPrincipal .containerTarjetas .tarjetaAhorcado{
-    width: 35%;
-    height: 45%;
+.containerPrincipal .cards .card {    
+  width: 35%;
+  height: 45%;
+  border-radius: 10px;
+  border: solid 1px gray;
+  cursor: pointer;
+  transition: 400ms;
 }
-.containerPrincipal .containerTarjetas .tarjetaSopaLetras:active,
-.containerPrincipal .containerTarjetas .tarjetaMemoria:active,
-.containerPrincipal .containerTarjetas .tarjetaAhorcado:active{
-    border: solid 1px #007bff;
-    box-shadow: 5px -5px 50px 5px #007bff;
+.containerPrincipal .cards .card:active,
+.containerPrincipal .cards .card:hover { 
+  transform: scale(1.1, 1.1);
 }
-.containerPrincipal .containerTarjetas .tarjetaSopaLetras .enlaceJuego .imgjuego,
-.containerPrincipal .containerTarjetas .tarjetaMemoria .enlaceJuego .imgjuego,
-.containerPrincipal .containerTarjetas .tarjetaAhorcado .enlaceJuego .imgjuego{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+.containerPrincipal .cards:hover > .card:not(:hover):not(:active) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+.containerPrincipal .cards .card .enlaceJuego {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerPrincipal .cards .red {
+  background-color: #00377D;
+}  
+.containerPrincipal .cards .blue {
+  background-color: #FFFFFF;
+}
+.containerPrincipal .cards .green {
+  background-color: #00377D;
+}
+.containerPrincipal .cards .red .enlaceJuego img,
+.containerPrincipal .cards .blue .enlaceJuego img,
+.containerPrincipal .cards .green .enlaceJuego img {
+  width: 100%;
+  height: 90%;
 }
 .containerPrincipal .btnRegresar{
-    width: 20%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 20px;
-    text-align: center;   
-    text-decoration: none;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #007bff;
-    border: solid #404c5d 1px;
-    transition: 500ms;
-    background: linear-gradient(145deg, #007bff, #1266c0);
-    box-shadow: -1px -5px 10px #41465b, 5px 5px 15px #41465b,
-      inset 5px 5px 10px #1266c0, inset -5px -5px 10px #1266c0;
+  width: 20%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #007bff;
+  border: solid #404c5d 2px;
 }
-.containerPrincipal .btnRegresar:active {
-    box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
-    color: #d6d6d6;
-    transition: 100ms;
-}
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-/*++++++++++++++++++++++++++++++++++vertical++++++++++++++++++++++++++++++++++*/
-@media (min-width: 320px) and (max-width: 544px) { 
-    .containerPrincipal .titulo{
-        font-size: 30px;
-    }
-    .containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-    .containerPrincipal .containerTarjetas .tarjetaMemoria,
-    .containerPrincipal .containerTarjetas .tarjetaAhorcado{
-        width: 45%;
-        height: 40%;
-    }
-    .containerPrincipal .btnRegresar{
-        width: 25%;
-        height: 5%;
-        font-size: 15px;
-    }    
-}
-@media (min-width: 545px) and (max-width: 640px) { 
-    .containerPrincipal .titulo{
-        font-size: 30px;
-    }
-    .containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-    .containerPrincipal .containerTarjetas .tarjetaMemoria,
-    .containerPrincipal .containerTarjetas .tarjetaAhorcado{
-        width: 45%;
-        height: 40%;
-    }
-    .containerPrincipal .btnRegresar{
-        width: 25%;
-        height: 5%;
-        font-size: 15px;
-    }    
-}
-@media (min-width: 641px) and (max-width: 780px) { 
-    .containerPrincipal .titulo{
-        font-size: 50px;
-    }
-    .containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-    .containerPrincipal .containerTarjetas .tarjetaMemoria,
-    .containerPrincipal .containerTarjetas .tarjetaAhorcado{
-        width: 45%;
-        height: 40%;
-    }
-    .containerPrincipal .btnRegresar{
-        width: 25%;
-        height: 5%;
-        font-size: 25px;
-    }
-}
-@media (min-width: 780px) and (max-width: 1023px) {
-    .containerPrincipal .titulo{
-        font-size: 55px;
-    }
-    .containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-    .containerPrincipal .containerTarjetas .tarjetaMemoria,
-    .containerPrincipal .containerTarjetas .tarjetaAhorcado{
-        width: 45%;
-        height: 40%;
-    }
-    .containerPrincipal .btnRegresar{
-        width: 25%;
-        height: 5%;
-        font-size: 25px;
-    }
-}
-@media (min-width: 1024px) and (max-width: 1280px) {
-    .containerPrincipal .titulo{
-        font-size: 55px;
-    }
-    .containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-    .containerPrincipal .containerTarjetas .tarjetaMemoria,
-    .containerPrincipal .containerTarjetas .tarjetaAhorcado{
-        width: 40%;
-        height: 40%;
-    }
-    .containerPrincipal .btnRegresar{
-        width: 25%;
-        height: 5%;
-        font-size: 25px;
-    }    
-}
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-/*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
-@media (orientation:landscape) and (max-height: 385px) {
-    .containerPrincipal .titulo{
-        font-size: 30px;
-    }
-    .containerPrincipal .containerTarjetas .tarjetaSopaLetras,
-    .containerPrincipal .containerTarjetas .tarjetaMemoria,
-    .containerPrincipal .containerTarjetas .tarjetaAhorcado{
-        width: 40%;
-        height: 40%;
-    }
-    .containerPrincipal .btnRegresar{
-        width: 25%;
-        height: 10%;
-        font-size: 15px;
-    }
-}
-@media (orientation:landscape) and (min-height: 410px) and (max-height: 550px) {
-
-}
-
-
-
-
