@@ -1,0 +1,1808 @@
+@font-face {
+    font-family: 'tigo';
+    src: url('../recursos/LetraTigo/tigo.ttf');
+    text-align: center;
+    align-items: center;
+  }
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+    font-family: 'tigo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    background-image: url(../recursos/img/fondo.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+/*++++++++++++++++++++++++++++++++++++ESTILOS SWEET ALERT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.swal2-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+/*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#contenedorPrincipal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contenedorPrincipal #contenedorPrincipalGrid {
+    width: 90%;
+    height: 90%;
+    border: solid 2px gray;
+    display: inline-block;
+    box-shadow: 0 0 10px white;
+    border-radius: 10px;
+    background-color: white;
+}
+/*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+    width: 100%;
+    height: 10%;
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+    width: 80%;
+    height: 100%;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    font-size: 25px;
+    text-align: center;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo{
+    background-color: #0065b3;
+    color: white;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+    width: 65%;
+    height: 100%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 25px;
+    border: solid 1px gray;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+    width: 2%;
+    height: 100%;
+    margin-right: 1%;
+    border: solid 1px gray;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+    width: 100%;
+    height: 100%;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: larger;
+    border: solid 1px gray;
+    color: gray;
+}
+/*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    border-right: solid 1px gray;
+}
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(32, 31, 31);
+    font-size: 25px;
+    text-align: center;
+}
+#contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost {
+    background-color: rgb(189, 188, 188);
+}
+#contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+    width: 100%;
+    height: 10%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    color: gray;
+}
+/*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+    width: 85%;
+    height: 100%;
+    margin-left: 2%;
+    display: grid;
+    gap: 1% 1%;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-template-rows: 33% 33% 33%;
+    overflow-y: none;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem3 {
+    border: solid 2px grey;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem4 {
+    border: solid 2px grey;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem5 {
+    border: solid 2px grey;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem6 {
+    border: solid 2px grey;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem7 {
+    border: solid 2px grey;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem8 {
+    border: solid 2px grey;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem9 {
+    border: solid 2px grey;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem10 {
+    border: solid 2px grey;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem11 {
+    border: solid 2px grey;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contenedorPrincipalGrid .gridItem3, 
+#contenedorPrincipalGrid .gridItem4, 
+#contenedorPrincipalGrid .gridItem5, 
+#contenedorPrincipalGrid .gridItem6, 
+#contenedorPrincipalGrid .gridItem7, 
+#contenedorPrincipalGrid .gridItem8, 
+#contenedorPrincipalGrid .gridItem9, 
+#contenedorPrincipalGrid .gridItem10,
+#contenedorPrincipalGrid .gridItem11,
+#contenedorPrincipalGrid .gridItem12 {
+    width: 100%;
+    height: 90%;
+}
+#contenedorPrincipalGrid .gridItem3 .img1,
+#contenedorPrincipalGrid .gridItem4 .img1,
+#contenedorPrincipalGrid .gridItem5 .img1,
+#contenedorPrincipalGrid .gridItem6 .img1,
+#contenedorPrincipalGrid .gridItem7 .img1,
+#contenedorPrincipalGrid .gridItem8 .img1,
+#contenedorPrincipalGrid .gridItem9 .img1,
+#contenedorPrincipalGrid .gridItem10 .img1,
+#contenedorPrincipalGrid .gridItem11 .img1 {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#contenedorPrincipalGrid .gridItem3 .imagen1,
+#contenedorPrincipalGrid .gridItem4 .imagen2,
+#contenedorPrincipalGrid .gridItem5 .imagen3,
+#contenedorPrincipalGrid .gridItem6 .imagen4,
+#contenedorPrincipalGrid .gridItem7 .imagen5,
+#contenedorPrincipalGrid .gridItem8 .imagen6,
+#contenedorPrincipalGrid .gridItem9 .imagen7,
+#contenedorPrincipalGrid .gridItem10 .imagen8,
+#contenedorPrincipalGrid .gridItem11 .imagen9 {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+    width: 70%;
+    height: 30%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 7px;
+    background-color:#002352;
+}
+/*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+    width: 75%;
+    height: 75%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 5px white;
+    position: absolute;
+}
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo0,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo1,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo2,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo3,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo4,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo5,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo6,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo7,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #contenedorVideo8 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+}
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+}
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+#contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+    width: 15%;
+    height: 5%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: black;
+    border: solid 2px gray;
+    border-radius: 10px;
+}
+@media (min-width:320px) and (max-width:544px) {
+    .swal2-container .swal2-popup {
+        width: 70%;
+        height: 80%;
+        font-size: 14px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 12px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 12px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 5%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 12px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 88%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 12px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 12px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 80%;
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 2px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 70%;
+        height: 30%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 83%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 50%;
+        height: 5%;
+        font-size: 15px;
+    }         
+}
+@media (min-width:545px) and (max-width:680px) {
+    .swal2-container .swal2-popup {
+        width: 70%;
+        height: 80%;
+        font-size: 18px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 18px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 18px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 5%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 18px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 88%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 18px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 18px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 49%;
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    /*imagenes icono video*/
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1,
+    /*imagenes videos*/
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 70%;
+        height: 30%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 83%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 50%;
+        height: 5%;
+        font-size: 18px;
+    }
+}
+@media (min-width:681px) and (max-width:780px) {
+    .swal2-container .swal2-popup {
+        width: 70%;
+        height: 80%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 20px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 20px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 5%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 88%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 20px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 49%;
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    /*imagenes icono video*/
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1,
+    /*imagenes videos*/
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 70%;
+        height: 30%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 83%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 50%;
+        height: 5%;
+        font-size: 20px;
+    }
+}
+@media (min-width:781px) and (max-width:1023px) {
+    .swal2-container .swal2-popup {
+        width: 70%;
+        height: 80%;
+        font-size: 25px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 25px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 25px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 5%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 25px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 88%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 25px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 25px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 49%;
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    /*imagenes icono video*/
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1,
+    /*imagenes videos*/
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 70%;
+        height: 30%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 83%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 50%;
+        height: 5%;
+        font-size: 25px;
+    }
+}
+@media (min-width:1024px) and (max-width:1280px) {
+    .swal2-container .swal2-popup {
+        width: 70%;
+        height: 80%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 20px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 40%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 20px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 5%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 80%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 20px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 30%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    /*imagenes icono video*/
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1,
+    /*imagenes videos*/
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 70%;
+        height: 30%;
+        font-size: 20px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 80%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 25%;
+        height: 8%;
+        font-size: 20px;
+    }
+}
+@media (orientation: landscape) and (max-height: 385px) {
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 50%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 15px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 45%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 15px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 3%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 15px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 15px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 15px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 31%;
+        height: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 2px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 60%;
+        height: 30%;
+        font-size: 15px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 80%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 40%;
+        height: 8%;
+        font-size: 15px;
+    } 
+
+}
+@media (orientation: landscape) and (min-height:410px) and (max-height:550px) {
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid {
+        width:95%;
+        height: 95%;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
+        width: 100%;
+        height: 10%;
+        margin-bottom: 2.5%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1{
+        width: 100%;
+        height: 50%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones{
+        width: 70%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones{
+        width: 30%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .botones img{
+        width: 80%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .archivo,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .inicio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .compartir,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor1 .opciones .vista{
+        width: 20%;
+        height: 100%;
+        font-size: 15px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2{
+        width: 100%;
+        height: 45%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .titulo{
+        width: 65%;
+        height: 100%;
+        margin-left: 5% ;
+        font-size: 15px;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar{
+        width: 3%;
+        height: 100%;
+        margin-right: 1%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .recargar img{
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado .contenedor2 .buscar{
+        width: 25%;
+        height: 100%;
+        margin: 0;
+        font-size: 15px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR BODY: BARRA LATERAL Y CONTENEDOR VIDEOS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    /*++++++++++++++++++++++++++++++++++++ESTILOS BARRA LATERAL++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody {
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral{
+        width: 22%;
+        height: 100%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas{
+        width: 100%;
+        height: 85%;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .escritorio,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .descargas,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .documentos,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .imagenes,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .videosPost,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .onedrive,
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody .contenedorPrincipalBarraLateral .carpetas .esteEquipo {
+        width: 100%;
+        height: 10%;
+        font-size: 15px;
+    }
+    #contenedorBody .contenedorPrincipalBarraLateral .leyenda{
+        width: 100%;
+        height: 15%;
+        font-size: 15px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
+        width: 80%;
+        height: 100%;
+        margin-left: 2%;
+        display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
+        flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
+        justify-content: center;
+        overflow-y: scroll;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem5, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem6, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem7, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem8, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem9, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem10, 
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem11,
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12{
+        width: 31%;
+        height: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid 2px grey;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 {
+        border: none;
+    }
+    #contenedorPrincipalGrid .gridItem3 .img1,
+    #contenedorPrincipalGrid .gridItem4 .img1,
+    #contenedorPrincipalGrid .gridItem5 .img1,
+    #contenedorPrincipalGrid .gridItem6 .img1,
+    #contenedorPrincipalGrid .gridItem7 .img1,
+    #contenedorPrincipalGrid .gridItem8 .img1,
+    #contenedorPrincipalGrid .gridItem9 .img1,
+    #contenedorPrincipalGrid .gridItem10 .img1,
+    #contenedorPrincipalGrid .gridItem11 .img1 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipalGrid .gridItem3 .imagen1,
+    #contenedorPrincipalGrid .gridItem4 .imagen2,
+    #contenedorPrincipalGrid .gridItem5 .imagen3,
+    #contenedorPrincipalGrid .gridItem6 .imagen4,
+    #contenedorPrincipalGrid .gridItem7 .imagen5,
+    #contenedorPrincipalGrid .gridItem8 .imagen6,
+    #contenedorPrincipalGrid .gridItem9 .imagen7,
+    #contenedorPrincipalGrid .gridItem10 .imagen8,
+    #contenedorPrincipalGrid .gridItem11 .imagen9 {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    #contenedorPrincipal #contenedorPrincipalGrid .gridItem12 .btnJuegos {
+        width: 60%;
+        height: 30%;
+        font-size: 15px;
+    }
+    /*++++++++++++++++++++++++++++++++++++ESTILOS VIDEOS POST-VENTAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta {
+        width: 72%;
+        height: 80%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 0 5px white;
+        position: absolute;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #video8 {
+    display: none;
+    }
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar0,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar1,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar2,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar3,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar4,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar5,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar6,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar7,
+    #contenedorBody #contenedorVideos #contenedorVideosPostVenta #btnCerrar8 {
+        width: 40%;
+        height: 8%;
+        font-size: 15px;
+    }
+}

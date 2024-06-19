@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/estilosVideos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenedorPrincipal">
+        <div id="contenedorPrincipalGrid">
+            <div id="contenedorEncabezado">
+                <!-- HEADER -->
+                <!-- Primera línea: Botones de la imagen -->
+                <div class="contenedor1">
+                    <div class="opciones">
+                        <div class="archivo">Archivo</div>
+                        <div class="inicio">Inicio</div>
+                        <div class="compartir">Compartir</div>
+                        <div class="vista">Vista</div>
+                    </div>
+                    <div class="botones">
+                        <img src="./recursos/img/windw_l.png" alt="">
+                    </div>
+                </div>
+                <!-- Segunda línea: Recuadros -->
+                <div class="contenedor2">
+                    <div class="titulo">VIDEOS POST VENTAS BÁSICAS</div>
+                    <div class="recargar">
+                        <img src="./recursos/img/recargar.png" alt="">
+                    </div>
+                    <div class="buscar">BUSCAR</div>
+                </div>
+            </div>
+            <div id="contenedorBody">
+                    <!-- BARRA LATERAL -->
+                    <div class="contenedorPrincipalBarraLateral">
+                        <div class="carpetas">
+                            <div class="escritorio">Escritorio</div>
+                            <div class="descargas">Descargas</div>
+                            <div class="documentos">Documentos</div>
+                            <div class="imagenes">Imágenes</div>
+                            <div class="videosPost">VIDEOS POST -</div>
+                            <div class="onedrive">OneDrive</div>
+                            <div class="esteEquipo">Este equipo</div>
+                        </div>
+                        <div class="leyenda">9 elementos</div>
+                    </div>
+                <div id="contenedorVideos">
+                    <div class="gridItem3">
+                        <img id="imgIconoVideo0" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgIntro" class="imagen1" src="./recursos/img/intro-COPIA.png" alt="" onclick="reproducirVideo(0)">
+                    </div>
+                    <div class="gridItem4">
+                        <img id="imgIconoVideo1" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgReposicionSim" class="imagen2" src="./recursos/img/1-COPIA.png" alt="" onclick="reproducirVideo(1)">
+                    </div>
+                    <div class="gridItem5">
+                        <img id="imgIconoVideo2" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgProcesoBiometrico" class="imagen3" src="./recursos/img/2-COPIA.png" alt="" onclick="reproducirVideo(2)">
+                    </div>
+                    <div class="gridItem6">
+                        <img id="imgIconoVideo3" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgCesionPrepago" class="imagen4" src="./recursos/img/3-COPIA.png" alt="" onclick= "reproducirVideo(3)">
+                    </div>
+                    <div class="gridItem7">
+                        <img id="imgIconoVideo4" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgProcesoReposicion" class="imagen5" src="./recursos/img/4-COPIA.png" alt="" onclick="reproducirVideo(4)">
+                    </div>
+                    <div class="gridItem8">
+                        <img id="imgIconoVideo5" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgCambioPlan" class="imagen6" src="./recursos/img/5-COPIA.png" alt="" onclick="reproducirVideo(5)">
+                    </div>
+                    <div class="gridItem9">
+                        <img id="imgIconoVideo6" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgNumeroPrivado" class="imagen7" src="./recursos/img/6-COPIA.png" alt="" onclick="reproducirVideo(6)">
+                    </div>
+                    <div class="gridItem10">
+                        <img id="imgIconoVideo7" class="img1" src="./recursos/img/carpetadevideosIconoVideo-copia.jpg"
+                            alt="">
+                        <img id="imgCambioNumero" class="imagen8" src="./recursos/img/7-COPIA.png" alt="" onclick="reproducirVideo(7)">
+                    </div>
+                    <div class="gridItem11">
+                        <img id="imgIconoVideo8" class="img1" src="./recursos/img/carpetadevideosIconoVideo.jpg"
+                            alt="">
+                        <img id="imgRegistroEquipos" class="imagen9" src="./recursos/img/8-COPIA.png" alt="" onclick="reproducirVideo(8)">
+                    </div>
+                    <div class="gridItem12">
+                        <a role="button" class="btnJuegos" id="btnJuegos" href="./juegos.html">JUEGOS</a>
+                    </div>
+                    <div id="contenedorVideosPostVenta">
+                        <div id="contenedorVideo0">
+                            <button id="btnCerrar0" onclick="detenerVideo(0)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video0" src="./recursos/videos/intro.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo1">
+                            <button id="btnCerrar1" onclick="detenerVideo(1)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video1" src="./recursos/videos/video1.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo2">
+                            <button id="btnCerrar2" onclick="detenerVideo(2)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video2" src="./recursos/videos/video2.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo3">
+                            <button id="btnCerrar3" onclick="detenerVideo(3)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video3" src="./recursos/videos/video3.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo4">
+                            <button id="btnCerrar4" onclick="detenerVideo(4)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video4" src="./recursos/videos/video4.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo5">
+                            <button id="btnCerrar5" onclick="detenerVideo(5)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video5" src="./recursos/videos/video5.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo6">
+                            <button id="btnCerrar6" onclick="detenerVideo(6)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video6" src="./recursos/videos/video6.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo7">
+                            <button id="btnCerrar7" onclick="detenerVideo(7)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video7" src="./recursos/videos/video7.mp4" controls></video>
+                        </div>
+                        <div id="contenedorVideo8">
+                            <button id="btnCerrar8" onclick="detenerVideo(8)"><i class="fas fa-reply" style="color: #0065b3;"></i>&nbsp;&nbsp;CERRAR</button>
+                            <video id="video8" src="./recursos/videos/video8.mp4" controls></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./JS/scriptVideos.js"></script>
+</body>
+</html>

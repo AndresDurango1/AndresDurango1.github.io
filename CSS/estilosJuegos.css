@@ -33,7 +33,7 @@ body {
   align-items: center;
   text-align: center;
   color: white;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
 }
 .containerPrincipal .cards {
@@ -41,7 +41,6 @@ body {
     height: 80%;
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     justify-content: space-around;
     align-items: center;
     gap: 15px;
@@ -69,18 +68,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-.containerPrincipal .cards .red {
+.containerPrincipal .cards .brand-tigo {
   background-color: #00377D;
 }  
-.containerPrincipal .cards .blue {
+.containerPrincipal .cards .white {
   background-color: #FFFFFF;
 }
-.containerPrincipal .cards .green {
-  background-color: #00377D;
-}
-.containerPrincipal .cards .red .enlaceJuego img,
-.containerPrincipal .cards .blue .enlaceJuego img,
-.containerPrincipal .cards .green .enlaceJuego img {
+.containerPrincipal .cards .card .enlaceJuego img {
   width: 100%;
   height: 90%;
 }
@@ -97,5 +91,175 @@ body {
   border-radius: 10px;
   cursor: pointer;
   background: #007bff;
-  border: solid #404c5d 2px;
+  border: solid #00377D 2px;
+}
+@media (min-width:320px) and (max-width:544px) {
+  .containerPrincipal .titulo{
+    width: 100%;
+    height: 10%;
+    font-size: 25px;
+  }
+  .containerPrincipal .cards {
+      width: 95%;
+      height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+  }
+  .containerPrincipal .cards .card {    
+    width: 49%;
+    height: 40%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  .containerPrincipal .cards .card .enlaceJuego img {
+    width: 100%;
+    height: 70%;
+    /* object-fit: contain; */
+  }
+  .containerPrincipal .btnRegresar{
+    width: 35%;
+    height: 5%;
+    font-size: 20px;
+  }  
+}
+@media (min-width:545px) and (max-width:680px) {
+  .containerPrincipal .titulo{
+    width: 100%;
+    height: 10%;
+    font-size: 40px;
+  }
+  .containerPrincipal .cards {
+      width: 95%;
+      height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+  }
+  .containerPrincipal .cards .card {    
+    width: 49%;
+    height: 40%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  .containerPrincipal .cards .card .enlaceJuego img {
+    width: 100%;
+    height: 70%;
+    /* object-fit: contain; */
+  }
+  .containerPrincipal .btnRegresar{
+    width: 35%;
+    height: 5%;
+    font-size: 30px;
+  }
+}
+@media (min-width:680px) and (max-width:780px) {
+  .containerPrincipal .titulo{
+    width: 100%;
+    height: 10%;
+    font-size: 50px;
+  }
+  .containerPrincipal .cards {
+      width: 95%;
+      height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+  }
+  .containerPrincipal .cards .card {    
+    width: 49%;
+    height: 40%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  .containerPrincipal .cards .card .enlaceJuego img {
+    width: 100%;
+    height: 70%;
+    /* object-fit: contain; */
+  }
+  .containerPrincipal .btnRegresar{
+    width: 35%;
+    height: 5%;
+    font-size: 30px;
+  }
+}
+@media (min-width:781px) and (max-width:1023px) {
+  .containerPrincipal .titulo{
+    width: 100%;
+    height: 10%;
+    font-size: 55px;
+  }
+  .containerPrincipal .cards {
+      width: 95%;
+      height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+  }
+  .containerPrincipal .cards .card {    
+    width: 49%;
+    height: 40%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  .containerPrincipal .cards .card .enlaceJuego img {
+    width: 100%;
+    height: 70%;
+    /* object-fit: contain; */
+  }
+  .containerPrincipal .btnRegresar{
+    width: 35%;
+    height: 5%;
+    font-size: 30px;
+  }
+}
+@media (min-width:1024px) and (max-width:1280px) {
+  .containerPrincipal .titulo{
+    width: 100%;
+    height: 10%;
+    font-size: 45px;
+  }
+  .containerPrincipal .cards {
+      width: 95%;
+      height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+  }
+  .containerPrincipal .cards .card {    
+    width: 35%;
+    height: 45%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  .containerPrincipal .cards .card .enlaceJuego img {
+    width: 100%;
+    height: 90%;
+    /* object-fit: contain; */
+  }
+  .containerPrincipal .btnRegresar{
+    width: 35%;
+    height: 5%;
+    font-size: 30px;
+  }
 }
