@@ -43,7 +43,7 @@
 }
 .contenedorPrincipal .contenedorHangman {
     width: 80%;
-    height: 50%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +51,7 @@
 }
 .contenedorPrincipal .contenedorHangman .hangman {
     width: 50%;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,15 +350,15 @@
         height: 10%;
     }
     .contenedorPrincipal .titulo {
-        font-size: 40px;
+        font-size: 30px;
     }
     .contenedorPrincipal .subtitulo,
     .contenedorPrincipal .recomendacion {
-        font-size: 30px;
+        font-size: 20px;
     }
     .contenedorPrincipal .contenedorHangman {
         width: 100%;
-        height: 60%;
+        height: 55%;
     }
     .contenedorPrincipal .contenedorHangman .hangman {
         width: 70%;
@@ -371,12 +371,12 @@
     .contenedorPrincipal .sub-container .word {
         width: 100%;
         height: 30%;
-        font-size: 45px;
+        font-size: 35px;
     }
     .contenedorPrincipal .sub-container .letters {
         width: 100%;
         height: 30%;
-        font-size: 45px;
+        font-size: 35px;
     }
     .contenedorPrincipal .sub-container .cajon {
         width: 100%;
@@ -386,7 +386,7 @@
     .contenedorPrincipal .sub-container .cajon .message {
         width: 100%;
         height: 100%;
-        font-size: 45px;
+        font-size: 35px;
     }
     .contenedorPrincipal #contenedorTeclado{
         width: 100%;
@@ -395,7 +395,7 @@
     .contenedorPrincipal #contenedorTeclado label {
         width: 100%;
         height: 30%;
-        font-size: 40px;
+        font-size: 35px;
     }
     .contenedorPrincipal #contenedorTeclado .letter-buttons {
         width: 100%;
@@ -415,7 +415,7 @@
     .contenedorPrincipal .buttons .btnRegresar {
         width: 40%;
         height: 65%;
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 @media (min-width:781px) and (max-width: 1023px) {
@@ -426,11 +426,11 @@
         height: 10%;
     }
     .contenedorPrincipal .titulo {
-        font-size: 40px;
+        font-size: 30px;
     }
     .contenedorPrincipal .subtitulo,
     .contenedorPrincipal .recomendacion {
-        font-size: 40px;
+        font-size: 25px;
     }
     .contenedorPrincipal .contenedorHangman {
         width: 100%;
@@ -452,7 +452,7 @@
     .contenedorPrincipal .sub-container .letters {
         width: 100%;
         height: 30%;
-        font-size: 45px;
+        font-size: 35px;
     }
     .contenedorPrincipal .sub-container .cajon {
         width: 100%;
@@ -462,7 +462,7 @@
     .contenedorPrincipal .sub-container .cajon .message {
         width: 100%;
         height: 100%;
-        font-size: 45px;
+        font-size: 35px;
     }
     .contenedorPrincipal #contenedorTeclado{
         width: 100%;
@@ -471,7 +471,7 @@
     .contenedorPrincipal #contenedorTeclado label {
         width: 100%;
         height: 30%;
-        font-size: 45px;
+        font-size: 35px;
     }
     .contenedorPrincipal #contenedorTeclado .letter-buttons {
         width: 100%;
@@ -480,7 +480,7 @@
     .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
         width: 5%;
         height: 50%;
-        font-size: 30px;
+        font-size: 25px;
     }
     .contenedorPrincipal .buttons{
         width: 100%;
@@ -491,7 +491,7 @@
     .contenedorPrincipal .buttons .btnRegresar {
         width: 40%;
         height: 65%;
-        font-size: 35px;
+        font-size: 25px;
     }
 }
 @media (min-width:1024px) and (max-width: 1280px) {
@@ -502,7 +502,7 @@
         height: 10%;
     }
     .contenedorPrincipal .titulo {
-        font-size: 35px;
+        font-size: 25px;
     }
     .contenedorPrincipal .subtitulo,
     .contenedorPrincipal .recomendacion {
@@ -510,11 +510,12 @@
     }
     .contenedorPrincipal .contenedorHangman {
         width: 100%;
-        height: 60%;
+        height: 40%;
+        margin-top: 0;
     }
     .contenedorPrincipal .contenedorHangman .hangman {
         width: 70%;
-        height: 80%;
+        height: 100%;
     }
     .contenedorPrincipal .sub-container {
         width: 100%;
@@ -549,7 +550,7 @@
     .contenedorPrincipal #contenedorTeclado label {
         width: 100%;
         height: 30%;
-        font-size: 25px;
+        font-size: 20px;
     }
     .contenedorPrincipal #contenedorTeclado .letter-buttons {
         width: 100%;
@@ -558,12 +559,12 @@
     .contenedorPrincipal #contenedorTeclado .letter-buttons .letter-button {
         width: 5%;
         height: 50%;
-        font-size: 20px;
+        font-size: 15px;
     }
     .contenedorPrincipal .buttons{
         width: 100%;
-        height: 10%;
-        margin: 1%;
+        height: 5%;
+        margin: 0%;
     }
     .contenedorPrincipal .buttons .btnPlayAgain,
     .contenedorPrincipal .buttons .btnRegresar {
