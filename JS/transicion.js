@@ -1,3 +1,18 @@
+window.addEventListener('load', () => {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        //Verificar la orientación del dispositivo
+        if (window.orientation === 0 || window.orientation === 180) {
+            Swal.fire({
+                title: 'Tener en cuenta',
+                text: 'Para tener una mejor experiencia de video, por favor rota tu dispositivo móvil',
+                icon: 'info',
+                iconColor: '#003cff',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#003cff'
+            })
+        }
+    }
+});
 //Contendor principal-contendor video tienda y video tienda
 var contenedorVideoInicial = document.getElementById("contenedorVideoInicial");
 var contenedorVideo = document.getElementById("contenedorVideoRigo");
@@ -35,18 +50,3 @@ function verVideos() {
         window.location.href = "../indexVideos.html";
     });
 }
-window.addEventListener('load', () => {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        //Verificar la orientación del dispositivo
-        if (window.orientation === 0 || window.orientation === 180) {
-            Swal.fire({
-                title: 'Tener en cuenta',
-                text: 'Para tener una mejor experiencia de video, por favor rota tu dispositivo móvil',
-                icon: 'info',
-                iconColor: '#003cff',
-                confirmButtonText: 'Aceptar',
-                confirmButtonColor: '#003cff'
-            })
-        }
-    }
-});
