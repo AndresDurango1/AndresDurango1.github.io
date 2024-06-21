@@ -1,3 +1,19 @@
+//SE CREA EL CONTROLADOR PARA EL EVENTO DE CARGA DE LA PAGINA, QUE MUESTRA ALERTA DE ROTACIÓN DE DISPOSITIVO MOVIL
+window.addEventListener('load', () => {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        //Verificar la orientación del dispositivo
+        if (window.orientation === 0 || window.orientation === 180) {
+            Swal.fire({
+                title: 'Tener en cuenta',
+                text: 'Para tener una mejor experiencia de video, por favor rota tu dispositivo móvil',
+                icon: 'info',
+                iconColor: '#003cff',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#003cff'
+            })
+        }
+    }
+});
 /* CONTENDOR GLOBAL DE LOS VIDEOS POST VENTA*/
 var contenedorVideosPostVenta = document.getElementById("contenedorVideosPostVenta");
 /* IMAGENES PORTADA DE LOS VIDEOS POST VENTA*/
@@ -74,22 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //BOTON PARA REDIRIGIR AL MENU DE JUEGOS
 const btnJuegos = document.getElementById('btnJuegos');
-//SE CREA EL CONTROLADOR PARA EL EVENTO DE CARGA DE LA PAGINA, QUE MUESTRA ALERTA DE ROTACIÓN DE DISPOSITIVO MOVIL
-window.addEventListener('load', () => {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        //Verificar la orientación del dispositivo
-        if (window.orientation === 0 || window.orientation === 180) {
-            Swal.fire({
-                title: 'Tener en cuenta',
-                text: 'Para tener una mejor experiencia de video, por favor rota tu dispositivo móvil',
-                icon: 'info',
-                iconColor: '#003cff',
-                confirmButtonText: 'Aceptar',
-                confirmButtonColor: '#003cff'
-            })
-        }
-    }
-});
 //CUANDO CARGA LA PAGINA INDEXVIDEO.HTML SE DEBE MOSTRAR LA PORTADA DEL VIDEO INTRO PARA PODER EMPEZAR A VER EL CURSO
 window.addEventListener('load', () => {
     imagenesIconosVideos.slice(1).forEach(function (imagenIcono) {
