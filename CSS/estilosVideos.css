@@ -1508,6 +1508,7 @@ body {
         display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
         flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
         justify-content: center;
+        align-items: center;
         overflow-y: scroll;
         border: solid 1px magenta;
     }
