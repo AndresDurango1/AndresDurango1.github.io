@@ -389,6 +389,8 @@ body {
     border: solid 2px gray;
     border-radius: 10px;
 }
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++vertical++++++++++++++++++++++++++++++++++*/
 @media (min-width:320px) and (max-width:544px) {
     .swal2-container .swal2-popup {
         width: 70%;
@@ -1405,14 +1407,13 @@ body {
         font-size: 20px;
     }
 }
+/*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
 @media (orientation: landscape) and (max-height: 385px) {
     /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-    #contenedorPrincipal {
-        overflow-y: auto;
-    }
     #contenedorPrincipal #contenedorPrincipalGrid {
-        width:95%;
-        height: 95%;
+        width:100%;
+        height: 100%;
+        border: solid 1px red;
     }
     /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR HEADER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     #contenedorPrincipal #contenedorPrincipalGrid #contenedorEncabezado{
