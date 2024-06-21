@@ -1503,12 +1503,13 @@ body {
     /*++++++++++++++++++++++++++++++++++++ESTILOS CONTENEDOR VIDEOS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     #contenedorPrincipal #contenedorPrincipalGrid #contenedorBody #contenedorVideos {
         width: 80%;
-        height: 100%;
+        height: 95%;
         margin-left: 2%;
         display: flex; /*se cambia el estilo a flex cuando cambia el tamaño de pantalla y se visualiza en dispositivos móviles*/
         flex-wrap: wrap; /*Se pone flex-wrap: wrap para que se acomoden los videos en el orden que es, uno bajo el otro segun el tamaño de la pantalla*/
         justify-content: center;
         overflow-y: scroll;
+        border: solid 1px magenta;
     }
     #contenedorPrincipal #contenedorPrincipalGrid .gridItem3,
     #contenedorPrincipal #contenedorPrincipalGrid .gridItem4, 
