@@ -1,9 +1,10 @@
 // Lista de palabras para el juego
 const palabras = [
-    {word :"tratamiento de datos", hint: "El primer formato que se debe diligenciar para un contrato hogar"}, 
-    {word: "contrato hogar", hint:"Contrato que se debe diligenciar para brindar servicio en los hogares"}, 
-    {word: "datos del usuario", hint: "Tercera etapa de la ruta del conocimiento mostrada en el primer video"},
-    {word: "legalizacion de oferta", hint: "Cuarta etapa de la ruta del conocimiento mostrada en el primer video"} 
+    {word :"tratamiento de datos", hint: "Política que debe aceptar el cliente para realizar el reconocimiento biométrico"}, 
+    {word: "cuestionario de evidente", hint:"Nombre del cuestionario que debe diligenciar el cliente para la reposicion de SIM"}, 
+    {word: "portal crm", hint: "En qué portal se llevan a cabo las transacciones"},
+    {word: "modificacion de linea", hint: "Opción del Árbol de Aplicaciones para gestionar la Cesión prepago"}, 
+    {word: "numero privado", hint: "Nombre del Servicio adional que restringe la identificacion de tu número movil en la terminal de destino"} 
 
 ];
 //para el teclado flotante

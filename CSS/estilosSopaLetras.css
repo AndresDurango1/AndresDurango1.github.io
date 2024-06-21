@@ -538,3 +538,55 @@ body {
         font-size: 14px;
     }
 }
+@media (orientation: landscape) and (min-height: 551px) and (max-height:620px) {/*NEXUS 7 horizontal*/
+    .container .titulo {
+        width: 100%;
+        height: 8%;
+        margin: 0%;
+        font-size: 35px;
+    }
+    .container .subtitulo {
+        width: 100%;
+        height: 6%;
+        margin: 0%;
+        font-size: 25px;
+    }
+    .container .palabras{
+        width: 100%;
+        height: 4%;
+        margin: 0%;
+    }
+    .container .palabras li {
+        width: 25%;
+        height: 95%;
+        font-size: 20px;
+    }
+    .container #espacio{
+        width: 100%;
+        height: 80%;
+    }
+    .container #espacio .tabla{
+        width: 80%;
+        height: 75%;
+    }
+    .container #espacio .tabla tr{
+        width: 100%;
+        height: 9%;
+    }
+    .container #espacio .tabla tr td {
+        width: 9%;
+        height: 100%; 
+        padding: 0.5rem; 
+        font-size: 1.2rem;
+    }
+    .container #espacio .btnRegresar{
+        width: 30%;
+        height: 5%;
+        font-size: 16px;
+    }
+    .swal2-container .swal2-popup {
+        width: 60%;
+        height: 70%;
+        font-size: 16px;
+    }
+}

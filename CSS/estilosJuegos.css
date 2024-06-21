@@ -58,7 +58,7 @@ body {
   transform: scale(1.1, 1.1);
 }
 .containerPrincipal .cards:hover > .card:not(:hover):not(:active) {
-  filter: blur(2.5px);
+  filter: blur(5px);
   transform: scale(0.9, 0.9);
 }
 .containerPrincipal .cards .card .enlaceJuego {
@@ -267,3 +267,36 @@ body {
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESPONSIVE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /*++++++++++++++++++++++++++++++++++horizontal++++++++++++++++++++++++++++++++++*/
+@media (orientation: landscape) and (max-height: 550px) {
+  .containerPrincipal .titulo{
+    width: 100%;
+    height: 10%;
+    font-size: 30px;
+  }
+  .containerPrincipal .cards {
+      width: 95%;
+      height: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2px;
+  }
+  .containerPrincipal .cards .card {    
+    width: 35%;
+    height: 45%;
+    border-radius: 10px;
+    border: solid 1px gray;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  .containerPrincipal .cards .card .enlaceJuego img {
+    width: 100%;
+    height: 90%;
+  }
+  .containerPrincipal .btnRegresar{
+    width: 20%;
+    height: 10%;
+    font-size: 20px;
+  }  
+}

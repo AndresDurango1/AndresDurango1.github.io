@@ -122,7 +122,7 @@ body {
     #contenedorVideoInicial #contenedorImagenTransicion #btnVerVideos {
         width: 43%;
         height: 25%;
-        top: 25%;
+        top: 28%;
         left: 10%;
         font-size: 15px;
     }
@@ -314,8 +314,8 @@ body {
     #contenedorVideoInicial #contenedorImagenTransicion #btnVerVideos {
         width: 43%;
         height: 25%;
-        top: 25%;
-        left: 10%;
+        top: 20%;
+        left: 12%;
         font-size: 15px;
     }
     #contenedorVideoInicial #contenedorImagenTransicion #videoInmersion {
@@ -348,8 +348,8 @@ body {
     #contenedorVideoInicial #contenedorImagenTransicion #btnVerVideos {
         width: 43%;
         height: 25%;
-        top: 25%;
-        left: 10%;
+        top: 20%;
+        left: 12%;
         font-size: 15px;
     }
     #contenedorVideoInicial #contenedorImagenTransicion #videoInmersion {

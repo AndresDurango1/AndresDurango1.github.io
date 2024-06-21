@@ -1,6 +1,6 @@
-var a4, a5, a6, c6, d6, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, f6, g6, h6, i3, i4, i5, i6, i7, i8, i9, j6;
+var a4, a5, a6, c6, d6, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, f6, g6, h6, i3, i4, i5, i6, i7, i8, i9, j6;
 function verificarGanador() {
-    var celdas = [a4, a5, a6, c6, d6, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, f6, g6, h6, i3, i4, i5, i6, i7, i8, i9, j6];
+    var celdas = [a4, a5, a6, c6, d6, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, f6, g6, h6, i3, i4, i5, i6, i7, i8, i9, j6];
     var todasLlenas = celdas.every(function (celda) {
         return celda && celda.style.color !== "";
     });
@@ -105,12 +105,6 @@ function comprobarE10() {
     e10 = document.getElementById('celdaE10');
     e10.style.color = "black";
     e10.style.backgroundColor = "white";
-    verificarGanador();
-}
-function comprobarE11() {
-    e11 = document.getElementById('celdaE11');
-    e11.style.color = "black";
-    e11.style.backgroundColor = "white";
     verificarGanador();
 }
 function comprobarF6() {
