@@ -47,6 +47,6 @@ function verVideos() {
     videoInmersion.play();
     //Una vez se termina el video y se dispara el evento "ended" se depliega la cascada de acciones con los otros contenedores
     videoInmersion.addEventListener("ended", () => {
-        window.location.href = "../index_videos.html";
+        window.location.href = "./index_videos.html";
     });
 }
