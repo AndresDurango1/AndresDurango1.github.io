@@ -1,10 +1,12 @@
 let questionIndex = 0;
 let dialogIndex = 0;
 let dialogStep = 0;
+let currentVideo = null;
 const dialogos = [dialogos_1, dialogos_2];
 
 //Definicion y Carga global de los elementos del DOM par usarlos dentro de las funciones 
 const btnContinue = document.getElementById("btn-continue");
+const btnBack = document.getElementById("btn-back");
 const presenterDialog = document.getElementById("presenter-dialog");
 const guestsDialog = document.getElementById("guests-dialog");
 const presenterAudio = document.getElementById("presenter-audio-player");
@@ -28,41 +30,55 @@ btnContinue.addEventListener("click", function () {
         }
     }
 });
+btnBack.addEventListener("click", function () {
+    // Detener cualquier audio que esté sonando antes de reproducir uno nuevo
+    presenterAudio.pause();
+    presenterAudio.currentTime = 0;
+    guestsAudio.pause();
+    guestsAudio.currentTime = 0;
+
+    //Si se está viendo una pregunta, se debe ocultar antes de regresar al diálogo anterior
+    questionContainer.style.display = "none";
+    presenterDialogContainer.style.display = "flex";
+
+    if (dialogStep > 1) {
+        dialogStep -= 2;
+        showDialog(dialogos[dialogIndex], dialogStep);
+        dialogStep++;
+    } else if (dialogIndex > 0) {
+        dialogIndex--;
+        dialogStep = dialogos[dialogIndex].length - 1;
+        showDialog(dialogos[dialogIndex], dialogStep);
+        dialogStep++;
+    } else {
+        console.log("No hay diálogos anteriores.");
+    }
+});
 function showDialog(dialogArray, index) {
+    if (currentVideo) {
+        currentVideo.pause();
+        currentVideo.currentTime = 0;
+        currentVideo = null;
+        videoContainer.innerHTML = '';
+    }
+
     if (index < dialogArray.length) {
         const dialog = dialogArray[index];
         //Si el tipo es "texto" se muestra el dialogo y se reproduce el audio si existe
         if (dialog.tipo === "texto") {
-            if (dialog.personaje === "presenter") {
-                presenterDialog.style.display = "flex";
-                presenterDialog.style.backgroundColor = "#faebd780";
-                presenterDialog.innerHTML = dialog.texto;
-                guestsDialog.style.display = "none";
-                //Reproducir audio si exite
-                if (dialog.audio) {
-                    presenterAudio.src = dialog.audio;
-                    btnContinue.disabled = true;
-                    presenterAudio.play();
-                    presenterAudio.onended = function () {
-                        btnContinue.disabled = false;
-                    };
-                }
-            } else {
-                guestsDialog.style.display = "flex";
-                guestsDialog.style.display = "flex";
-                guestsDialog.innerHTML = dialog.texto;
-                presenterDialog.style.backgroundColor = "transparent";
-                presenterDialog.innerHTML = '';
-                //Reproducir audio si exite
-                if (dialog.audio) {
-                    guestsAudio.src = dialog.audio;
-                    btnContinue.disabled = true;
-                    guestsAudio.play();
-                    guestsAudio.onended = function () {
-                        btnContinue.disabled = false;
-                        guestsDialog.style.display = "none";
-                    };
-                }
+            //Operadores ternarios para mostrar dialogos del presentador o los invitados
+            presenterDialog.style.backgroundColor = dialog.personaje === "presenter" ? "#faebd780" : "Transparent";
+            guestsDialog.style.display = dialog.personaje !== "presenter" ? "flex" : "none";
+            presenterDialog.innerHTML = dialog.personaje === "presenter" ? dialog.texto : '';
+            guestsDialog.innerHTML = dialog.personaje !== "presenter" ? dialog.texto : '';
+            if(dialog.audio) {
+                let audioPlayer = dialog.personaje === "presenter" ? presenterAudio : guestsAudio;
+                audioPlayer.src = dialog.audio;
+                btnContinue.disabled = true;
+                audioPlayer.play();
+                audioPlayer.onended = function () {
+                    btnContinue.disabled = false;
+                };
             }
         }
         //Si el tipo es "video" se reproduce el video
@@ -71,7 +87,6 @@ function showDialog(dialogArray, index) {
             videoContainer.style.display = "flex";
             btnContinue.disabled = true;
             if (dialog.src) {
-                console.log("dialog.src=" + dialog.src);
                 videoContainer.innerHTML = `
                 <video class="current-video" id="current-video" controls autoplay width="90%">
                     <source src="${dialog.src}" type="video/mp4">
@@ -80,9 +95,9 @@ function showDialog(dialogArray, index) {
                 `;
             }
             setTimeout(() => {
-                const videoElement = document.getElementById('current-video');
-                if (videoElement) {
-                    videoElement.onended = function () {
+                currentVideo = document.getElementById('current-video');
+                if (currentVideo) {
+                    currentVideo.onended = function () {
                         btnContinue.disabled = false;
                         videoContainer.style.display = "none";
                         presenterDialog.style.display = "flex";
@@ -112,10 +127,32 @@ function loadQuestion(index) {
             loader.style.display = "flex";
             setTimeout(() => {
                 loader.style.display = "none";
-                presenterDialogContainer.style.display = "flex";
-                startNextDialog();
+                let swalOptions = {
+                    showConfirmButton: true,
+                };
+
+                let correctSound = document.createElement('audio');
+                correctSound.src = "../resources/audios/questions/correct-answer.mp3";
+                let incorrectSound = document.createElement('audio');
+                incorrectSound.src = "../resources/audios/questions/incorrect-answer.mp3";
+
+                if (i === currentQuestion.answer) {
+                    swalOptions.icon = 'success';
+                    swalOptions.title = '¡Correcto!';
+                    swalOptions.text = "Felicitaciones, has respondido correctamente";
+                    correctSound.play();
+                } else {
+                    swalOptions.icon = 'error';
+                    swalOptions.title = '¡Incorrecto!';
+                    swalOptions.text = "Lo siento, has respondido incorrectamente.";
+                    incorrectSound.play();
+                }
+                Swal.fire(swalOptions).then(() => {
+                    presenterDialogContainer.style.display = "flex";
+                    startNextDialog();
+                });
             }, 5000);
-        });
+        });        
         optionsContainer.appendChild(optionElement);
     });
     questionIndex++;
@@ -132,3 +169,13 @@ function startNextDialog() {
         console.log("No hay más diálogos.");
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    let backgroundSound = document.getElementById('background-sound');
+    backgroundSound.volume = 0.2; //Volumen al 20% del volumen total del sonido, ya que es un sonido de fondo
+    backgroundSound.loop = true;
+
+    document.addEventListener('click', () => {
+        backgroundSound.play().catch(error => console.error("Error al reproducir audio:", error));
+    }, { once: true });
+});
