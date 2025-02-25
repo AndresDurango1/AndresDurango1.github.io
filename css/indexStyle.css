@@ -44,28 +44,34 @@ body .main-container .presenter-container .presenter {
 body .main-container .content-container {
   width: 40%;
   height: 100%;
-  margin: 0%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: space-around;
+}
+
+body .main-container .content-container .container-title {
+  width: 100%;
+  height: 10%;
+  border-radius: 10px;
+  background-color: #d1c2ff32;
 }
 
 body .main-container .content-container .title {
   width: 100%;
-  height: 20%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: bolder;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 body .main-container .content-container .presenter-dialog-container {
   width: 100%;
-  height: 80%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,6 +98,14 @@ body .main-container .content-container .presenter-dialog-container .video-conta
   width: 100%;
   height: 100%;
   display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+body .main-container .content-container .presenter-dialog-container .video-container .current-video {
+  width: 90%;
+  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;

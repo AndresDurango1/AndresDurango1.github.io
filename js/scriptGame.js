@@ -73,7 +73,7 @@ function showDialog(dialogArray, index) {
             if (dialog.src) {
                 console.log("dialog.src=" + dialog.src);
                 videoContainer.innerHTML = `
-                <video id="current-video" controls autoplay width="80%">
+                <video class="current-video" id="current-video" controls autoplay width="90%">
                     <source src="${dialog.src}" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>

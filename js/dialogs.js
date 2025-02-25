@@ -35,25 +35,25 @@ const dialogos_2 = [
     {
         tipo: "texto",
         personaje: "presenter", 
-        texto:"La opción que nos indica que es un cuarto que aloja grandes máquinas de cómputo, que de forma autónoma corren procesos que no impactan al usuario final, por lo tanto, no están al servicio de estos. Es posible que ustedes vean algo de certeza en lo de cuarto que aloja máquinas de cómputo, pero tiene una inconsistencia; dice que no está al servicio del usuario final. Se cae ahí lo que buscamos como definición de Cloud.",
+        texto:"<span style='background-color:#488d2b'>La opción que nos indica que es un cuarto que aloja grandes máquinas de cómputo, que de forma autónoma corren procesos que no impactan al usuario final, por lo tanto, no están al servicio de estos. Es posible que ustedes vean algo de certeza en lo de cuarto que aloja máquinas de cómputo, pero tiene una inconsistencia; dice que no está al servicio del usuario final. Se cae ahí lo que buscamos como definición de Cloud.</span>",
         audio: "../resources/audios/presenter/presenter-review-answer-1.m4a"
     },
     {
         tipo: "texto",
         personaje: "presenter", 
-        texto: "Hay otra  opción que nos indica que es un grupo de computadores sobre los cuales los Ingenieros de T.I. pueden ejecutar un proceso empresarial crítico, que permite la continuidad de la operación. Esta opción probablemente inicia bien, no obstante, le deja la exclusividad de su uso solo a ingenieros de T.I.",
+        texto: "<span style='background-color:#f3af56'>Hay otra  opción que nos indica que es un grupo de computadores sobre los cuales los Ingenieros de T.I. pueden ejecutar un proceso empresarial crítico, que permite la continuidad de la operación. Esta opción probablemente inicia bien, no obstante, le deja la exclusividad de su uso solo a ingenieros de T.I.</span>",
         audio: "../resources/audios/presenter/presenter-review-answer-2.m4a"
     },
     {
         tipo: "texto",
         personaje: "presenter", 
-        texto: "También encontramos una opción que nos indica que es un conjunto de archivos en una máquina de cómputo que pueden ser ejecutados por un usuario administrador que accede a la máquina con usuario y contraseña. Pero en esta se está limitando el concepto a una sola máquina de cómputo con acceso restringido.",
+        texto: "<span style='background-color:#3165c7'>También encontramos una opción que nos indica que es un conjunto de archivos en una máquina de cómputo que pueden ser ejecutados por un usuario administrador que accede a la máquina con usuario y contraseña. Pero en esta se está limitando el concepto a una sola máquina de cómputo con acceso restringido.</span>",
         audio: "../resources/audios/presenter/presenter-review-answer-3.m4a"
     },
     {
         tipo: "texto",
         personaje: "presenter", 
-        texto: "Si revisamos la opción que nos indica que Cloud es un conjunto de recursos de infraestructura (como servidores, almacenamiento y redes) interconectados, que permiten el almacenamiento, procesamiento y ejecución de aplicaciones y que estos recursos están disponibles para los usuarios a través de internet u otras redes y se gestionan de manera flexible y escalable, vemos que esta respuesta define perfectamente lo que es Cloud.",
+        texto: "<span style='background-color:#d93d4a'>Si revisamos la opción que nos indica que Cloud es un conjunto de recursos de infraestructura (como servidores, almacenamiento y redes) interconectados, que permiten el almacenamiento, procesamiento y ejecución de aplicaciones y que estos recursos están disponibles para los usuarios a través de internet u otras redes y se gestionan de manera flexible y escalable, vemos que esta respuesta define perfectamente lo que es Cloud.</span>",
         audio: "../resources/audios/presenter/presenter-review-answer-4.m4a"
     },
     {
