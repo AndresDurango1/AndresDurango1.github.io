@@ -326,7 +326,6 @@ body .main-container .guests-container .guests-dialog-container .guests-dialog {
 
 body .main-container .guests-container .guests {
   width: 100%;
-  height: 70%;
   object-fit: scale-down;
 }
 
@@ -449,5 +448,213 @@ body .main-container .guests-container .guests {
   100% {
     transform: translateX(0px);
     width: 16px;
+  }
+}
+.swal2-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+/* RESPONSIVE */
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 576px) {    
+  body {
+    background-size: 100% 100%;
+  }
+  
+  body .main-container .presenter-container .btn-back-container {
+    width: 100%;
+    height: 10%;
+    margin-top: 5%;
+  }
+   
+  body .main-container .presenter-container .btn-back-container .btn-back {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  body .main-container .presenter-container .presenter {
+    width: 100%;
+    object-fit: scale-down;
+  }
+      
+  body .main-container .content-container .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  body .main-container .content-container .presenter-dialog-container .presenter-dialog {
+    padding: 1px;
+    font-size: 14px;
+  }
+  
+  body .main-container .content-container .presenter-dialog-container .video-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body .main-container .content-container .presenter-dialog-container .video-container .current-video {
+    width: 100%;
+  }
+    
+  body .main-container .content-container .presenter-dialog-container .btn-container #btn-continue {
+    width: 70%;
+    height: 70%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  body .main-container .content-container .question-container {
+    width: 100%;
+    height: 85%;
+  }
+  
+  body .main-container .content-container .question-container .question-text {
+    font-size: 0.7em;
+    font-weight: lighter;
+  }
+  
+  body .main-container .content-container .question-container .options-container .option1:hover,
+  body .main-container .content-container .question-container .options-container .option2:hover,
+  body .main-container .content-container .question-container .options-container .option3:hover,
+  body .main-container .content-container .question-container .options-container .option4:hover {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;   
+    z-index: 2;
+    transform: scale(1.5);
+  }
+    
+  body .main-container .content-container .question-container .options-container .card-content {
+    padding: 5px;
+  }
+  
+  body .main-container .content-container .question-container .options-container .card-content .option-text {
+    font-size: 0.5em;
+    font-weight:lighter;
+  }
+    
+  body .main-container .guests-container .guests-dialog-container {
+    width: 95%;
+    height: 20%;
+    margin-top: 10%;
+  }
+  
+  body .main-container .guests-container .guests-dialog-container .guests-dialog {
+    padding: 1px;
+    font-size: 14px;
+  }
+  
+  body .main-container .guests-container .guests {
+    width: 100%;
+    object-fit: scale-down;
+  }
+  
+  .swal2-container .swal2-popup {
+    width: 70%;
+    height: 80%;
+    font-size: 14px;
+  }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  body {
+    background-size: 100% 100%;
+  }
+  
+  body .main-container .presenter-container .btn-back-container {
+    width: 100%;
+    height: 10%;
+    margin-top: 5%;
+  }
+   
+  body .main-container .presenter-container .btn-back-container .btn-back {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  body .main-container .presenter-container .presenter {
+    width: 100%;
+    object-fit: scale-down;
+  }
+      
+  body .main-container .content-container .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  body .main-container .content-container .presenter-dialog-container .presenter-dialog {
+    padding: 1px;
+    font-size: 14px;
+  }
+  
+  body .main-container .content-container .presenter-dialog-container .video-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body .main-container .content-container .presenter-dialog-container .video-container .current-video {
+    width: 100%;
+  }
+    
+  body .main-container .content-container .presenter-dialog-container .btn-container #btn-continue {
+    width: 70%;
+    height: 70%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  body .main-container .content-container .question-container {
+    width: 100%;
+    height: 85%;
+  }
+  
+  body .main-container .content-container .question-container .question-text {
+    font-size: 0.7em;
+    font-weight: lighter;
+  }
+  
+  body .main-container .content-container .question-container .options-container .option1:hover,
+  body .main-container .content-container .question-container .options-container .option2:hover,
+  body .main-container .content-container .question-container .options-container .option3:hover,
+  body .main-container .content-container .question-container .options-container .option4:hover {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;   
+    z-index: 2;
+    transform: scale(1.5);
+  }
+    
+  body .main-container .content-container .question-container .options-container .card-content {
+    padding: 5px;
+  }
+  
+  body .main-container .content-container .question-container .options-container .card-content .option-text {
+    font-size: 0.5em;
+    font-weight:lighter;
+  }
+    
+  body .main-container .guests-container .guests-dialog-container {
+    width: 95%;
+    height: 20%;
+    margin-top: 10%;
+  }
+  
+  body .main-container .guests-container .guests-dialog-container .guests-dialog {
+    padding: 1px;
+    font-size: 14px;
+  }
+  
+  body .main-container .guests-container .guests {
+    width: 100%;
+    object-fit: scale-down;
+  }
+  
+  .swal2-container .swal2-popup {
+    width: 70%;
+    height: 80%;
+    font-size: 14px;
   }
 }
