@@ -290,6 +290,7 @@ body .main-container .content-container .question-container .options-container .
   transition: transform 0.3s ease-in-out;   
   z-index: 2;
   transform: scale(1.1);
+  font-size: 1em;
 }
 
 body .main-container .content-container .question-container .options-container .card-content {
@@ -309,7 +310,7 @@ body .main-container .content-container .question-container .options-container .
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: bold;
 }
 
@@ -668,7 +669,7 @@ body .main-container .guests-container .guests {
   }
   
   body .main-container .content-container .question-container .options-container .card-content .option-text {
-    font-size: 0.6em;
+    font-size: 0.55em;
     font-weight:bolder;
   }
     
@@ -680,7 +681,7 @@ body .main-container .guests-container .guests {
   
   body .main-container .guests-container .guests-dialog-container .guests-dialog {
     padding: 1px;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   body .main-container .guests-container .guests {
@@ -773,7 +774,7 @@ body .main-container .guests-container .guests {
   }
   
   body .main-container .content-container .question-container .options-container .card-content .option-text {
-    font-size: 0.8em;
+    font-size: 0.65em;
     font-weight:bolder;
   }
     
@@ -785,7 +786,7 @@ body .main-container .guests-container .guests {
   
   body .main-container .guests-container .guests-dialog-container .guests-dialog {
     padding: 1px;
-    font-size: 20px;
+    font-size: 18px;
   }
   
   body .main-container .guests-container .guests {
@@ -877,7 +878,7 @@ body .main-container .guests-container .guests {
   }
   
   body .main-container .content-container .question-container .options-container .card-content .option-text {
-    font-size: 1em;
+    font-size: 0.7em;
     font-weight:bolder;
   }
     
