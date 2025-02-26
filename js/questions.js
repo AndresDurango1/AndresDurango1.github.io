@@ -14,7 +14,7 @@ const questions = [
     {
         questionNumber: 2,
         subject: "NOCIONES CLOUD",
-        text: "Bien compañeros, les propongo una segunda pregunta que termine de afianzar el concepto: Teniendo en cuenta que un centro de datos es un espacio debidamente acondicionado para alojar infraestructura computacional que permita la instalación, administración y ejecución de aplicaciones, Selecciona la opción que exprese mejor lo que son los facilities",
+        text: "Compañeros, les propongo una segunda pregunta para afianzar el concepto: Dado que un centro de datos es un espacio acondicionado para alojar infraestructura computacional, ¿cuál opción describe mejor los facilities?",
         options: [
             "Conjunto de servidores que almacenan datos de aplicaciones empresariales, sin incluir sistemas de soporte como energía, refrigeración o seguridad.",
             "Infraestructura y servicios que se encargan de garantizar el funcionamiento de un centro de datos. Incluyen: Sistemas de energía, Refrigeración, Seguridad, Monitoreo, Entorno físico entre otros.",

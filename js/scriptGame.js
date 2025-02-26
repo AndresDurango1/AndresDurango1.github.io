@@ -26,7 +26,12 @@ btnContinue.addEventListener("click", function () {
         if (questionIndex < questions.length) {
             loadQuestion(questionIndex);
         } else {
-            console.log("No hay más preguntas.");
+            //console.log("No hay más preguntas.");
+            Swal.fire({
+                icon: 'success',
+                title: 'Felicidades has completado todas las preguntas!',
+                showConfirmButton: true,
+            })
         }
     }
 });
@@ -84,6 +89,7 @@ function showDialog(dialogArray, index) {
         //Si el tipo es "video" se reproduce el video
         else if (dialog.tipo === "video") {
             presenterDialog.style.display = "none";
+            guestsDialog.style.display = "none";
             videoContainer.style.display = "flex";
             btnContinue.disabled = true;
             if (dialog.src) {
