@@ -14,9 +14,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-image: url('../resources/images/jpeg/public/public.jpg');
-  background-size:100% 100%;
   background-attachment: fixed;
-
   background-size: contain;
   overflow: hidden;
 }
@@ -325,9 +323,8 @@ body .main-container .guests-container {
 }
 
 body .main-container .guests-container .guests-dialog-container {
-  width: 85%;
+  width: 95%;
   height: 25%;
-  margin-top: 2%;
 }
 
 body .main-container .guests-container .guests-dialog-container .guests-dialog {
@@ -345,7 +342,7 @@ body .main-container .guests-container .guests-dialog-container .guests-dialog {
 }
 
 body .main-container .guests-container .guests {
-  width: 100%;
+  width: 90%;
   object-fit: scale-down;
 }
 

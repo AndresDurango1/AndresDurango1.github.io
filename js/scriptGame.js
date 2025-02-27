@@ -26,12 +26,19 @@ btnContinue.addEventListener("click", function () {
         if (questionIndex < questions.length) {
             loadQuestion(questionIndex);
         } else {
-            //console.log("No hay más preguntas.");
             Swal.fire({
                 icon: 'success',
-                title: 'Felicidades has completado todas las preguntas!',
-                showConfirmButton: true,
-            })
+                title: 'Felicidades, has completado todas las preguntas!',
+                showCancelButton: true,
+                cancelButtonColor: '#FFC107',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#0D6EFD',
+                cancelButtonText: 'Ir a Créditos',
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.cancel) {
+                    window.location.href = '../pages/credits.html';
+                }
+            });
         }
     }
 });
@@ -73,10 +80,10 @@ function showDialog(dialogArray, index) {
         if (dialog.tipo === "texto") {
             //Operadores ternarios para mostrar dialogos del presentador o los invitados
             presenterDialog.style.backgroundColor = dialog.personaje === "presenter" ? "#faebd780" : "Transparent";
-            guestsDialog.style.display = dialog.personaje !== "presenter" ? "flex" : "none";
+            guestsDialog.style.backgroundColor = dialog.personaje !== "presenter" ? "#faebd780" : "Transparent";
             presenterDialog.innerHTML = dialog.personaje === "presenter" ? dialog.texto : '';
             guestsDialog.innerHTML = dialog.personaje !== "presenter" ? dialog.texto : '';
-            if(dialog.audio) {
+            if (dialog.audio) {
                 let audioPlayer = dialog.personaje === "presenter" ? presenterAudio : guestsAudio;
                 audioPlayer.src = dialog.audio;
                 btnContinue.disabled = true;
@@ -92,9 +99,10 @@ function showDialog(dialogArray, index) {
             guestsDialog.style.display = "none";
             videoContainer.style.display = "flex";
             btnContinue.disabled = true;
+            btnBack.disabled = true;
             if (dialog.src) {
                 videoContainer.innerHTML = `
-                <video class="current-video" id="current-video" controls autoplay width="90%">
+                <video class="current-video" id="current-video" autoplay width="90%">
                     <source src="${dialog.src}" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
@@ -105,9 +113,13 @@ function showDialog(dialogArray, index) {
                 if (currentVideo) {
                     currentVideo.onended = function () {
                         btnContinue.disabled = false;
+                        btnBack.disabled = false;
                         videoContainer.style.display = "none";
                         presenterDialog.style.display = "flex";
                         presenterDialog.innerHTML = '. . .';
+                        guestsDialog.style.display = "flex";
+                        guestsDialog.style.backgroundColor = "Transparent";
+                        guestsDialog.innerHTML = '';
                     };
                 }
             }, 100);
@@ -158,7 +170,7 @@ function loadQuestion(index) {
                     startNextDialog();
                 });
             }, 5000);
-        });        
+        });
         optionsContainer.appendChild(optionElement);
     });
     questionIndex++;
