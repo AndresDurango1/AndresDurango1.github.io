@@ -5,6 +5,8 @@ let currentVideo = null;
 const dialogos = [dialogos_1, dialogos_2];
 
 //Definicion y Carga global de los elementos del DOM par usarlos dentro de las funciones 
+const guestsContainer = document.querySelector('.guests-container');
+const presenterContainer = document.querySelector('.presenter-container');
 const btnContinue = document.getElementById("btn-continue");
 const btnBack = document.getElementById("btn-back");
 const presenterDialog = document.getElementById("presenter-dialog");
@@ -48,11 +50,9 @@ btnBack.addEventListener("click", function () {
     presenterAudio.currentTime = 0;
     guestsAudio.pause();
     guestsAudio.currentTime = 0;
-
     //Si se está viendo una pregunta, se debe ocultar antes de regresar al diálogo anterior
     questionContainer.style.display = "none";
     presenterDialogContainer.style.display = "flex";
-
     if (dialogStep > 1) {
         dialogStep -= 2;
         showDialog(dialogos[dialogIndex], dialogStep);
@@ -73,16 +73,43 @@ function showDialog(dialogArray, index) {
         currentVideo = null;
         videoContainer.innerHTML = '';
     }
-
     if (index < dialogArray.length) {
         const dialog = dialogArray[index];
         //Si el tipo es "texto" se muestra el dialogo y se reproduce el audio si existe
         if (dialog.tipo === "texto") {
             //Operadores ternarios para mostrar dialogos del presentador o los invitados
-            presenterDialog.style.backgroundColor = dialog.personaje === "presenter" ? "#faebd780" : "Transparent";
+            /*presenterDialog.style.backgroundColor = dialog.personaje === "presenter" ? "#faebd780" : "Transparent";
             guestsDialog.style.backgroundColor = dialog.personaje !== "presenter" ? "#faebd780" : "Transparent";
             presenterDialog.innerHTML = dialog.personaje === "presenter" ? dialog.texto : '';
-            guestsDialog.innerHTML = dialog.personaje !== "presenter" ? dialog.texto : '';
+            guestsDialog.innerHTML = dialog.personaje !== "presenter" ? dialog.texto : '';*/
+            if (dialog.personaje === "presenter") {
+                console.log("Dialogo del presentador");
+                if (presenterContainer.style.display === "none") {
+                    presenterContainer.style.display = "flex";
+                }
+                presenterDialog.style.display = "flex";
+                presenterDialog.style.backgroundColor = "#faebd780";
+                presenterDialog.innerHTML = dialog.texto;
+                //guestsDialog.style.display = "none";
+                guestsContainer.style.display = "none";
+            } else if (dialog.personaje === "guests") {
+                console.log("Dialogo de invitados");
+                if (guestsContainer.style.display === "none") {
+                    guestsContainer.style.display = "flex";
+                }
+                guestsDialog.style.display = "flex";
+                guestsDialog.style.backgroundColor = "#faebd780";
+                presenterDialog.innerHTML = '. . .';
+                guestsDialog.innerHTML = dialog.texto;
+                //presenterDialog.style.display = "none";
+                presenterContainer.style.display = "none";
+            } else if (dialog.personaje === "both") {
+                console.log("Dialogo de ambos");
+                if (presenterContainer.style.display === "none" || guestsContainer.style.display === "none") {
+                    presenterContainer.style.display = "flex";
+                    guestsContainer.style.display = "flex";
+                }
+            }
             if (dialog.audio) {
                 let audioPlayer = dialog.personaje === "presenter" ? presenterAudio : guestsAudio;
                 audioPlayer.src = dialog.audio;
@@ -148,12 +175,10 @@ function loadQuestion(index) {
                 let swalOptions = {
                     showConfirmButton: true,
                 };
-
                 let correctSound = document.createElement('audio');
                 correctSound.src = "../resources/audios/questions/correct-answer.mp3";
                 let incorrectSound = document.createElement('audio');
                 incorrectSound.src = "../resources/audios/questions/incorrect-answer.mp3";
-
                 if (i === currentQuestion.answer) {
                     swalOptions.icon = 'success';
                     swalOptions.title = '¡Correcto!';
@@ -187,7 +212,6 @@ function startNextDialog() {
         console.log("No hay más diálogos.");
     }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     let backgroundSound = document.getElementById('background-sound');
     backgroundSound.volume = 0.2; //Volumen al 20% del volumen total del sonido, ya que es un sonido de fondo
