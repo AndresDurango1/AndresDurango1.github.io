@@ -6,18 +6,21 @@ const dialogos = [dialogos_1, dialogos_2];
 
 //Definicion y Carga global de los elementos del DOM par usarlos dentro de las funciones 
 const guestsContainer = document.querySelector('.guests-container');
-const presenterContainer = document.querySelector('.presenter-container');
-const btnContinue = document.getElementById("btn-continue");
-const btnBack = document.getElementById("btn-back");
-const presenterDialog = document.getElementById("presenter-dialog");
 const guestsDialog = document.getElementById("guests-dialog");
-const presenterAudio = document.getElementById("presenter-audio-player");
 const guestsAudio = document.getElementById("guests-audio-player");
+
+const presenterContainer = document.querySelector('.presenter-container');
+const presenterDialogContainer = document.getElementById("presenter-dialog-container");
+const presenterDialog = document.getElementById("presenter-dialog");
+const presenterAudio = document.getElementById("presenter-audio-player");
+
 const videoContainer = document.getElementById("video-container");
 const questionContainer = document.getElementById("question-container");
 const questionText = document.getElementById("question-text");
 const optionsContainer = document.querySelector('.options-container');
-const presenterDialogContainer = document.getElementById("presenter-dialog-container");
+
+const btnContinue = document.getElementById("btn-continue");
+const btnBack = document.getElementById("btn-back");
 const loader = document.getElementById("loader");
 
 btnContinue.addEventListener("click", function () {
@@ -77,11 +80,6 @@ function showDialog(dialogArray, index) {
         const dialog = dialogArray[index];
         //Si el tipo es "texto" se muestra el dialogo y se reproduce el audio si existe
         if (dialog.tipo === "texto") {
-            //Operadores ternarios para mostrar dialogos del presentador o los invitados
-            /*presenterDialog.style.backgroundColor = dialog.personaje === "presenter" ? "#faebd780" : "Transparent";
-            guestsDialog.style.backgroundColor = dialog.personaje !== "presenter" ? "#faebd780" : "Transparent";
-            presenterDialog.innerHTML = dialog.personaje === "presenter" ? dialog.texto : '';
-            guestsDialog.innerHTML = dialog.personaje !== "presenter" ? dialog.texto : '';*/
             if (dialog.personaje === "presenter") {
                 console.log("Dialogo del presentador");
                 if (presenterContainer.style.display === "none") {
@@ -90,46 +88,63 @@ function showDialog(dialogArray, index) {
                 presenterDialog.style.display = "flex";
                 presenterDialog.style.backgroundColor = "#faebd780";
                 presenterDialog.innerHTML = dialog.texto;
-                //guestsDialog.style.display = "none";
                 guestsContainer.style.display = "none";
-            } else if (dialog.personaje === "guests") {
+            }
+            else if (dialog.personaje === "guests") {
                 console.log("Dialogo de invitados");
                 if (guestsContainer.style.display === "none") {
                     guestsContainer.style.display = "flex";
                 }
                 guestsDialog.style.display = "flex";
                 guestsDialog.style.backgroundColor = "#faebd780";
-                presenterDialog.innerHTML = '. . .';
                 guestsDialog.innerHTML = dialog.texto;
-                //presenterDialog.style.display = "none";
                 presenterContainer.style.display = "none";
-            } else if (dialog.personaje === "both") {
+                presenterDialog.style.display = "none";
+
+            }
+            else if (dialog.personaje === "both") {
                 console.log("Dialogo de ambos");
-                if (presenterContainer.style.display === "none" || guestsContainer.style.display === "none") {
+                if (presenterContainer.style.display === "none") {
                     presenterContainer.style.display = "flex";
+                    presenterDialog.style.display = "flex";
+                    presenterDialog.style.backgroundColor = "#faebd780";
+                }
+                presenterDialog.innerHTML = dialog.texto;
+            
+                if (guestsContainer.style.display === "none") {
                     guestsContainer.style.display = "flex";
+                    guestsDialog.style.display = "flex";
+                    guestsDialog.style.backgroundColor = "transparent";
                 }
             }
-            if (dialog.audio) {
-                let audioPlayer = dialog.personaje === "presenter" ? presenterAudio : guestsAudio;
-                audioPlayer.src = dialog.audio;
-                btnContinue.disabled = true;
-                audioPlayer.play();
-                audioPlayer.onended = function () {
-                    btnContinue.disabled = false;
-                };
-            }
+        }
+        if (dialog.audio) {
+            let audioPlayer = dialog.personaje === "presenter" ? presenterAudio : guestsAudio;
+            audioPlayer.src = dialog.audio;
+            btnContinue.disabled = true;
+            audioPlayer.play();
+            audioPlayer.onended = function () {
+                btnContinue.disabled = false;
+            };
         }
         //Si el tipo es "video" se reproduce el video
         else if (dialog.tipo === "video") {
+            if (dialog.personaje === "presenter") {
+                console.log("Dialogo del presentador");
+                if (presenterContainer.style.display === "none") {
+                    presenterContainer.style.display = "flex";
+                }
+                guestsContainer.style.display = "none";
+            }
             presenterDialog.style.display = "none";
             guestsDialog.style.display = "none";
             videoContainer.style.display = "flex";
             btnContinue.disabled = true;
             btnBack.disabled = true;
+
             if (dialog.src) {
                 videoContainer.innerHTML = `
-                <video class="current-video" id="current-video" autoplay width="90%">
+                <video class="current-video" id="current-video" autoplay controls width="90%">
                     <source src="${dialog.src}" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
@@ -212,7 +227,7 @@ function startNextDialog() {
         console.log("No hay más diálogos.");
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     let backgroundSound = document.getElementById('background-sound');
     backgroundSound.volume = 0.2; //Volumen al 20% del volumen total del sonido, ya que es un sonido de fondo
     backgroundSound.loop = true;
@@ -220,4 +235,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', () => {
         backgroundSound.play().catch(error => console.error("Error al reproducir audio:", error));
     }, { once: true });
-});
+});*/
