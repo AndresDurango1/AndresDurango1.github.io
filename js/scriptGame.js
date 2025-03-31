@@ -175,10 +175,10 @@ function loadQuestion(index) {
     questionText.textContent = currentQuestion.text;
     optionsContainer.innerHTML = '';
 
-    let backgroundSound = document.getElementById('background-sound');
+    //let backgroundSound = document.getElementById('background-sound');
     let questionBackgroundSound = document.getElementById('question-background-sound');
-    backgroundSound.pause();
-    backgroundSound.currentTime = 0;
+    //backgroundSound.pause();
+    //backgroundSound.currentTime = 0;
     questionBackgroundSound.volume = 0.5;
     questionBackgroundSound.play();
     
@@ -216,8 +216,8 @@ function loadQuestion(index) {
                 Swal.fire(swalOptions).then(() => {
                     presenterDialogContainer.style.display = "flex";
                     questionBackgroundSound.pause();
-                    backgroundSound.currentTime = 0;
-                    backgroundSound.play();
+                    //backgroundSound.currentTime = 0;
+                    //backgroundSound.play();
                     startNextDialog();
                 });
             }, 5000);
@@ -238,7 +238,7 @@ function startNextDialog() {
         console.log("No hay más diálogos.");
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     let backgroundSound = document.getElementById('background-sound');
     backgroundSound.volume = 0.2; //Volumen al 20% del volumen total del sonido, ya que es un sonido de fondo
     backgroundSound.loop = true;
@@ -246,4 +246,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', () => {
         backgroundSound.play().catch(error => console.error("Error al reproducir audio:", error));
     }, { once: true });
-});
+});*/

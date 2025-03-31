@@ -2,7 +2,6 @@ const dialogos_1 = [
     {
         tipo: "texto",
         personaje: "presenter",
-        presentador_imagen: "",
         texto: "Bienvenidos al Concurso 'Nociones Cloud' de Tigo Business. El día de hoy tengo unos invitados muy especiales, Fernando y Gabriela. Bienvenidos a este programa",
         audio: "../resources/audios/presenter/presenter-welcome.m4a"
     },
